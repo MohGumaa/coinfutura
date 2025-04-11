@@ -6,35 +6,20 @@
  * this is the WordPress construct of pages: specifically, posts with a post
  * type of `page`.
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
  * @package coinfutura
  */
-
+defined( 'ABSPATH' ) || exit;
 get_header();
 ?>
-
-	<section id="primary">
-		<main id="main">
-
+	<main id="main-page" class="page-cfu flex-1 w-full pt-10 pb-24">
+		<div class="container container-center max-w-3xl px-4 sm:px-3">
 			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
-
-				get_template_part( 'template-parts/content/content', 'page' );
-
-				// If comments are open, or we have at least one comment, load
-				// the comment template.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
-
-			endwhile; // End of the loop.
+				while ( have_posts() ) :
+					the_post();
+					get_template_part( 'template-parts/content/content', 'page' );
+				endwhile;
 			?>
-
-		</main><!-- #main -->
-	</section><!-- #primary -->
-
+		</div>
+	</main>
 <?php
 get_footer();

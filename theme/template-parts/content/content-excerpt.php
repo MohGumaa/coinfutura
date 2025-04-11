@@ -23,7 +23,6 @@ $cfu_time_data = cfu_post_time($cfu_post_id);
 
 $default_icon = get_theme_file_uri( 'assets/images/cfu-icon.webp' );
 ?>
-
 <article id="post-<?php echo $cfu_post_id; ?>" class="grid grid-cols-1 md:grid-cols-12 gap-4 mb-6 pb-6 border-b border-gray-950/5 dark:border-white/10 last:border-b-0 last:mb-0 last:pb-0">
 	<div class="col-span-full md:col-span-9 order-2 md:order-1 space-y-2">
 		<h3 class="article-title min-lg:text-lg font-semibold">
