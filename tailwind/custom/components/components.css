@@ -1,3 +1,12 @@
+
+.cfu-footer .menu {
+	@apply space-y-5 leading-6;
+}
+
+.cfu-footer .menu a {
+	@apply hover:underline;
+}
+
 /* Utilities Class */
 .container-center {
 	@apply mx-auto px-3;
@@ -9,6 +18,14 @@
 
 .flexCenter {
 	@apply flex justify-center items-center;
+}
+
+.cfu-widget-title {
+	@apply text-gray-950 dark:text-white;
+}
+
+.menu {
+	@apply text-sm text-gray-950 dark:text-white;
 }
 
 /* .page-title,
@@ -39,7 +56,3 @@
 	@apply float-right ml-8;
 } */
 
-
-.sub-menu {
-	@apply hidden;
-}

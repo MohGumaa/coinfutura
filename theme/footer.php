@@ -16,6 +16,7 @@ defined( 'ABSPATH' ) || exit;
 </div>
 
 <?php wp_footer(); ?>
+<script src="https://widgets.coingecko.com/gecko-coin-price-marquee-widget.js"></script>
 
 </body>
 </html>

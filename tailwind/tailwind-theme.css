@@ -2,6 +2,7 @@
  * Import Tailwind’s default theme.
  */
 @import "tailwindcss/theme";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
 	--color-background: var(--wp--preset--color--background);

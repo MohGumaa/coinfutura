@@ -7,6 +7,12 @@
 defined( 'ABSPATH' ) || exit;
 ?>
 
+<?php if ( is_active_sidebar( 'cfu-footer' ) ) : ?>
+	<footer id="colophon" class="cfu-footer grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 w-full relative before:absolute before:top-0 before:h-px before:w-[200vw] before:bg-gray-950/5 dark:before:bg-white/10 before:-left-[100vw] after:absolute after:bottom-0 after:h-px after:w-[200vw] after:bg-gray-950/5 dark:after:bg-white/10 after:-left-[100vw]" aria-label="<?php esc_attr_e( 'Footer', 'coinfutura' ); ?>">
+		<?php dynamic_sidebar( 'cfu-footer' ); ?>
+	</footer>
+<?php endif; ?>
+
 <div class="flex flex-col items-center gap-6 sm:flex-row sm:justify-between sm:gap-8 pt-10 pb-24 container-center w-full">
 	<div class="relative z-0 inline-grid grid-cols-3 gap-0.5 rounded-full bg-gray-950/5 p-0.75 text-gray-950 dark:bg-white/10 dark:text-white" id="headlessui-radiogroup-:Rcaulb:" role="radiogroup">
 		<span class="rounded-full p-1.5 *:size-7 data-checked:bg-white data-checked:ring data-checked:inset-ring data-checked:ring-gray-950/10 data-checked:inset-ring-white/10 sm:p-0 dark:data-checked:bg-gray-700 dark:data-checked:text-white dark:data-checked:ring-transparent" aria-label="System theme" id="headlessui-radio-:Rdcaulb:" role="radio" aria-checked="true" tabindex="0" data-headlessui-state="">
@@ -39,45 +45,3 @@ defined( 'ABSPATH' ) || exit;
 	</div>
 	<p class="text-sm text-gray-600 dark:text-gray-400">&copy; <?php echo date('Y'); ?> <?php echo esc_html(get_bloginfo('name')); ?>. <?php esc_html_e('All rights reserved.', 'coinfutura'); ?></p>
 </div>
-
-<footer id="colophon" class="hidden">
-
-	<?php if ( !is_active_sidebar( 'sidebar-1' ) ) : ?>
-		<aside role="complementary" aria-label="<?php esc_attr_e( 'Footer', 'coinfutura' ); ?>">
-			<?php dynamic_sidebar( 'sidebar-1' ); ?>
-		</aside>
-	<?php endif; ?>
-
-	<?php if ( !has_nav_menu( 'menu-2' ) ) : ?>
-		<nav aria-label="<?php esc_attr_e( 'Footer Menu', 'coinfutura' ); ?>">
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-2',
-					'menu_class'     => 'footer-menu',
-					'depth'          => 1,
-				)
-			);
-			?>
-		</nav>
-	<?php endif; ?>
-
-	<div>
-		<?php
-		$cfu_blog_info = get_bloginfo( 'name' );
-		if ( ! empty( $cfu_blog_info ) ) :
-			?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
-			<?php
-		endif;
-
-		/* translators: 1: WordPress link, 2: WordPress. */
-		printf(
-			'<a href="%1$s">proudly powered by %2$s</a>.',
-			esc_url( __( 'https://wordpress.org/', 'coinfutura' ) ),
-			'WordPress'
-		);
-		?>
-	</div>
-
-</footer><!-- #colophon -->

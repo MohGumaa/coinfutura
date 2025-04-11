@@ -90,12 +90,23 @@ add_action( 'after_setup_theme', 'cfu_setup' );
 function cfu_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => __( 'Footer', 'coinfutura' ),
-			'id'            => 'sidebar-1',
-			'description'   => __( 'Add widgets here to appear in your footer.', 'coinfutura' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
+			'name'          => __( 'Sidebar', 'coinfutura' ),
+			'id'            => 'right-sidebar',
+			'description'   => __( 'Add widgets here to appear in your Sidebar.', 'coinfutura' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
+			'name'          => __( 'Footer', 'coinfutura' ),
+			'id'            => 'cfu-footer',
+			'description'   => __( 'Add widgets here to appear in your footer.', 'coinfutura' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s border-x border-gray-950/5 py-10 pl-2 not-xl:border-y not-xl:first:border-t-0 not-xl:nth-2:border-t-0 max-sm:nth-2:border-t not-xl:nth-3:border-b-0 max-sm:nth-3:border-b not-xl:last:border-b-0 dark:border-white/10">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title cfu-widget-title font-semibold capitalize mb-4">',
 			'after_title'   => '</h2>',
 		)
 	);
@@ -156,3 +167,11 @@ require get_template_directory() . '/inc/template-tags.php';
  * Functions which enhance the theme by hooking into WordPress.
  */
 require get_template_directory() . '/inc/template-functions.php';
+
+/**
+ * Functions which disabled block-edito WordPress.
+ */
+function cfu_theme_support() {
+	remove_theme_support( 'widgets-block-editor' );
+}
+add_action( 'after_setup_theme', 'cfu_theme_support' );
