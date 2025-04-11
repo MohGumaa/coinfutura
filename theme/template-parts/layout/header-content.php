@@ -9,7 +9,7 @@
 
 ?>
 
-<header id="masthead">
+<header id="masthead" class="flex items-center gap-2">
 
 	<div>
 		<?php
@@ -38,6 +38,7 @@
 			array(
 				'theme_location' => 'menu-1',
 				'menu_id'        => 'primary-menu',
+				'menu_class'     => 'flex flex-col gap-x-2 gap-y-5 min-lg:flex-row min-lg:items-center min-lg:items-center min-lg:h-full',
 				'items_wrap'     => '<ul id="%1$s" class="%2$s" aria-label="submenu">%3$s</ul>',
 			)
 		);
