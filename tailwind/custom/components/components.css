@@ -26,3 +26,8 @@
 .entry-content > .alignright {
 	@apply float-right ml-8;
 } */
+
+
+.sub-menu {
+	@apply hidden;
+}

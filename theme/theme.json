@@ -26,8 +26,13 @@
 				},
 				{
 					"slug": "tertiary",
-					"color": "#0369a1",
+					"color": "#d1d5dc",
 					"name": "Tertiary"
+				},
+				{
+					"slug": "prosecolor",
+					"color": "#364153",
+					"name": "ProseColor"
 				}
 			]
 		},

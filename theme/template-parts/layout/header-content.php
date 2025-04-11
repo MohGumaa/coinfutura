@@ -31,7 +31,7 @@
 	</div>
 
 	<nav id="site-navigation" aria-label="<?php esc_attr_e( 'Main Navigation', 'coinfutura' ); ?>">
-		<button aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'coinfutura' ); ?></button>
+		<button aria-controls="primary-menu" aria-expanded="false" class="hidden"><?php esc_html_e( 'Primary Menu', 'coinfutura' ); ?></button>
 
 		<?php
 		wp_nav_menu(

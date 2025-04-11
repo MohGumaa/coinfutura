@@ -2,61 +2,23 @@
 /**
  * coinfutura functions and definitions
  *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
  * @package coinfutura
  */
 
 if ( ! defined( 'CFU_VERSION' ) ) {
-	/*
-	 * Set the theme’s version number.
-	 *
-	 * This is used primarily for cache busting. If you use `npm run bundle`
-	 * to create your production build, the value below will be replaced in the
-	 * generated zip file with a timestamp, converted to base 36.
-	 */
+
 	define( 'CFU_VERSION', '0.1.0' );
 }
 
 if ( ! defined( 'CFU_TYPOGRAPHY_CLASSES' ) ) {
-	/*
-	 * Set Tailwind Typography classes for the front end, block editor and
-	 * classic editor using the constant below.
-	 *
-	 * For the front end, these classes are added by the `cfu_content_class`
-	 * function. You will see that function used everywhere an `entry-content`
-	 * or `page-content` class has been added to a wrapper element.
-	 *
-	 * For the block editor, these classes are converted to a JavaScript array
-	 * and then used by the `./javascript/block-editor.js` file, which adds
-	 * them to the appropriate elements in the block editor (and adds them
-	 * again when they’re removed.)
-	 *
-	 * For the classic editor (and anything using TinyMCE, like Advanced Custom
-	 * Fields), these classes are added to TinyMCE’s body class when it
-	 * initializes.
-	 */
 	define(
 		'CFU_TYPOGRAPHY_CLASSES',
-		'prose prose-neutral max-w-none prose-a:text-primary'
+		'prose prose-gray dark:prose-invert max-w-none prose-a:text-primary'
 	);
 }
 
 if ( ! function_exists( 'cfu_setup' ) ) :
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
-	 */
 	function cfu_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on coinfutura, use a find and replace
-		 * to change 'coinfutura' to the name of your theme in all the template files.
-		 */
 		load_theme_textdomain( 'coinfutura', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
@@ -73,9 +35,9 @@ if ( ! function_exists( 'cfu_setup' ) ) :
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		add_image_size('cfu-blog-featured', 376, 212, true);
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
@@ -124,7 +86,6 @@ add_action( 'after_setup_theme', 'cfu_setup' );
 /**
  * Register widget area.
  *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function cfu_widgets_init() {
 	register_sidebar(
