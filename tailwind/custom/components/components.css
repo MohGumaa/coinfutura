@@ -22,6 +22,18 @@
 	@apply hover:underline;
 }
 
+.cfu-sidebar ul li {
+	@apply flex flex-col gap-y-2 border-b border-gray-950/5 dark:border-white/10 mt-4 first:mt-1.5 pb-3 last:pb-0 last:border-none;
+}
+
+.cfu-sidebar .post-date {
+	@apply text-xs text-gray-500 capitalize;
+}
+
+.cfu-sidebar li a {
+	@apply font-semibold text-sm leading-5;
+}
+
 /* Utilities Class */
 .wp-post-image {
 	@apply relative overflow-hidden after:content-[""] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-gray-950/5 dark:after:bg-white/10 after:rounded-md after:animate-pulse after:duration-300 object-cover aspect-video w-full h-full rounded;
@@ -63,13 +75,22 @@ time {
 	@apply text-sm text-gray-950 dark:text-white;
 }
 
-.cfn-title,
+.cfu-title,
 .page-title,
 .entry-title,
 .article-badge,
 .article-title,
 .cfu-widget-title {
 	@apply text-gray-950 dark:text-white;
+}
+
+.page-title,
+.entry-title {
+	@apply font-extrabold text-3xl;
+}
+
+.title-with-underline, .cfu-widget-title-underline {
+	@apply border-b-2 border-gray-950/5 dark:border-white/10 relative after:absolute after:content-[""] after:left-0 after:-bottom-0.5 after:w-16 after:h-0.5 after:bg-radial-crypto pb-3;
 }
 
 .article-excerpt {
@@ -80,8 +101,24 @@ time {
 	@apply bg-gray-950/5 dark:bg-white/10 ring-1 ring-gray-500/10 ring-inset font-medium rounded-full py-1;
 }
 
-.article-badge, .entry-footer a:not(.post-edit-link) {
+.article-primary_category, .article-badge, .entry-footer a:not(.post-edit-link) {
 	@apply inline-flex items-center justify-center capitalize no-underline px-2;
+}
+
+.article-primary_category, .entry-footer a:not(.post-edit-link) {
+	@apply bg-radial-crypto text-gray-950 py-0.5 rounded-xs font-bold;
+}
+
+.entry-footer a:not(.post-edit-link) {
+	@apply py-1 px-2.5 uppercase;
+}
+
+.entry-footer a:not(.post-edit-link) {
+	@apply before:content-['#'] before:pe-[1px];
+}
+
+.cfu_sidebar-widget > :not(.cfu-widget-title) {
+	@apply p-3;
 }
 
 .facebook-bg, .facebook a {

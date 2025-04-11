@@ -1,31 +1,18 @@
 <?php
 /**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no `home.php` file exists.
- *
+ * The template for displaying tag pages
  *
  * @package coinfutura
  */
 defined( 'ABSPATH' ) || exit;
 get_header();
 ?>
+
 	<main id="main-tag" class="tag-cfu flex-1 w-full pt-12 pb-24 md:pb-40">
 
 		<section class="p-2 bg-gray-950/5 dark:bg-white/10 mb-10">
 			<div class="relative overflow-hidden bg-gray-950/[2.5%] after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:inset-ring after:inset-ring-gray-950/5 dark:after:inset-ring-white/10 bg-[image:radial-gradient(var(--pattern-fg)_1px,_transparent_0)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-gray-950)]/5 dark:[--pattern-fg:var(--color-white)]/10 rounded-lg p-3">
-				<h1 class="text-2xl lg:text-3xl text-balance font-bold title-with-underline capitalize page-title">
-					<?php 
-						if ( is_home() && ! is_front_page() ) {
-							single_post_title();
-						} else {
-							echo get_bloginfo('name');
-						}
-					?>
-				</h1>
+				<h1 class="text-2xl lg:text-3xl text-balance font-bold title-with-underline capitalize page-title"><?php echo single_term_title('', false); ?></h1>
 			</div>
 		</section>
 		
@@ -56,5 +43,6 @@ get_header();
 			</div>
 		</section>
 	</main>
+
 <?php
 get_footer();

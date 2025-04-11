@@ -2,35 +2,24 @@
 /**
  * Template part for displaying a message when posts are not found
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
  * @package coinfutura
  */
-
+defined( 'ABSPATH' ) || exit;
 ?>
 
-<section>
-
-	<header class="page-header">
-		<?php if ( is_search() ) : ?>
-
-			<h1 class="page-title">
-				<?php
-				printf(
-					/* translators: 1: search result title. 2: search term. */
-					'<h1 class="page-title">%1$s <span>%2$s</span></h1>',
-					esc_html__( 'Search results for:', 'coinfutura' ),
-					get_search_query()
-				);
-				?>
-			</h1>
-
-		<?php else : ?>
-
-			<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'coinfutura' ); ?></h1>
-
-		<?php endif; ?>
-	</header><!-- .page-header -->
+<section class="none-page">
+	<?php if ( is_search() ) :?>
+		<?php
+			printf(
+				/* translators: 1: search result title. 2: search term. */
+				'<h1 class="page-title font-semibold max-md:text-2xl capitalize title-with-underline mb-10">%1$s <span>%2$s</span></h1>',
+				esc_html__( 'Search results for:', 'coinfutura' ),
+				get_search_query()
+			);
+			?>
+	<?php else :?>
+		<h1 class="page-title font-semibold max-md:text-2xl capitalize title-with-underline mb-10"><?php esc_html_e( 'Nothing Found', 'coinfutura' ); ?></h1>
+	<?php endif; ?>
 
 	<div <?php cfu_content_class( 'page-content' ); ?>>
 		<?php
@@ -71,6 +60,6 @@
 			get_search_form();
 		endif;
 		?>
-	</div><!-- .page-content -->
+	</div>
 
 </section>

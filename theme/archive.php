@@ -5,10 +5,9 @@
  * @package coinfutura
  */
 defined( 'ABSPATH' ) || exit;
-
 get_header();
 ?>
-	<main id="main-archive" class="archive-cfn flex-1 container-center w-full pt-9 md:pt-12 pb-24 md:pb-40">
+	<main id="main-archive" class="archive-cfu flex-1 container-center w-full pt-9 md:pt-12 pb-24 md:pb-40">
 		<?php if ( have_posts() ) :?>
 			<h1 class="text-balance max-md:text-2xl page-title mb-5"><?php echo single_term_title('', false); ?></h1>
 

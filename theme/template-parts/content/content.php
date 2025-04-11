@@ -11,7 +11,6 @@ $cfu_tags = get_the_tags();
 $cfu_title = esc_html(get_the_title());
 $cfu_permalink = esc_url(get_permalink());
 
-// Extract time data array once
 $cfu_time_data = cfu_post_time($cfu_post_id);
 [
 	$is_updated,
@@ -22,7 +21,6 @@ $cfu_time_data = cfu_post_time($cfu_post_id);
 	$published_date_time,
 ] = $cfu_time_data;
 
-// Define default icon path only once
 $default_icon = get_theme_file_uri( 'assets/images/cfu-icon.webp' );
 ?>
 
@@ -33,11 +31,11 @@ $default_icon = get_theme_file_uri( 'assets/images/cfu-icon.webp' );
 		</a>
 	</figure>
 	<div class="flex-1 space-y-2">
-		<h2 class="article-title line-clamp-3 md:line-clamp-2 font-semibold max-sm:text-sm">
+		<h3 class="article-title line-clamp-3 md:line-clamp-2 font-semibold max-sm:text-sm">
       <a href="<?php echo $cfu_permalink; ?>" rel="bookmark">
         <?php echo $cfu_title; ?>
       </a>
-    </h2>
+    </h3>
 		<div class="flex items-center flex-wrap gap-2 text-xs mb-0 min-sm:mb-3">
 			<time datetime="<?php echo esc_attr($is_updated ? $modified_date_time : $published_date_time); ?>" class="text-gray-500 font-medium">
 				<?php echo esc_html($published_time_ago); ?>

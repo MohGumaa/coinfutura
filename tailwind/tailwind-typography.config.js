@@ -20,6 +20,15 @@ const hexToRgb = (hex) => {
 module.exports = {
 	theme: {
 		extend: {
+			backgroundImage: {
+				// Original linear gradient from SVG
+				'linear-crypto':
+					'linear-gradient(to bottom right, #03FA6F 0%, #03DEB5 58%, #04C2FC 100%)',
+
+				// Converted to radial gradient
+				'radial-crypto':
+					'radial-gradient(circle, #03FA6F 0%, #03DEB5 58%, #04C2FC 100%)',
+			},
 			typography: (theme) => ({
 				/**
 				 * Tailwind Typography’s default styles are opinionated, and

@@ -7,7 +7,6 @@
  * @package coinfutura
  */
 defined( 'ABSPATH' ) || exit;
-
 ?>
 			<?php get_template_part( 'template-parts/layout/footer', 'content' ); ?>
 			</div>
