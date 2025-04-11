@@ -204,3 +204,138 @@ function cfu_html5_comment( $comment, $args, $depth ) {
 		</article><!-- .comment-body -->
 	<?php
 }
+
+/**
+ * Get formatted post time information
+ * 
+ * @param int $id Post ID
+ * @return array Array containing display times and update status
+ */
+function cfu_post_time($id) {
+	$post_time = get_the_time('U', $id);
+	$current_time = current_time('timestamp');
+	
+	// Set display time based on post age
+	if ($post_time >= strtotime('-1 day', $current_time)) {
+		$published_time_ago = sprintf(
+			esc_html__('%s ago', 'coinfutura'),
+			human_time_diff($post_time, $current_time)
+		);
+	} else {
+		$published_time_ago = get_the_date('', $id);
+	}
+
+	// Get the post published date and time
+	$published_time = get_the_time('M j, Y \a\t h:i A', $id);
+	$published_date_time = get_the_date('c', $id);
+
+	// Get the post modified date and time
+	$modified_time = get_the_modified_time('M j, Y \a\t h:i A', $id);
+	$modified_date_time =  get_the_modified_date('c', $id);
+
+	$is_updated = $modified_time !== $published_time;
+		
+	return [
+		$is_updated,
+		$modified_time, 
+		$published_time, 
+		$modified_date_time, 
+		$published_time_ago,	
+		$published_date_time,	
+	];
+}
+
+/**
+ * Get meta description from SEO or fallback to post content
+ * 
+ * @param int|null $post_id Post ID. If null, uses current post.
+ * @return string Meta description or empty string if not found
+ */
+if (!function_exists('cfu_get_meta_description')) :
+  function cfu_get_meta_description($post_id = null) {
+    if (!$post_id) {
+      $post_id = get_the_ID();
+      if (!$post_id) {
+        return '';
+      }
+    }
+
+    $post = get_post($post_id);
+    if (!$post) {
+      return '';
+    }
+
+    $rank_math_meta_desc = get_post_meta($post_id, 'rank_math_description', true);
+    
+    if (!empty($rank_math_meta_desc)) {
+      return wp_strip_all_tags($rank_math_meta_desc);
+    }
+
+    // Fallback to post content if no Rank Math meta description
+    $content = $post->post_content;
+    
+    // Remove shortcodes and HTML
+    $content = strip_shortcodes($content);
+    $content = wp_strip_all_tags($content);
+    
+    // Clean up whitespace
+    $content = preg_replace('/\s+/', ' ', $content);
+    $content = trim($content);
+    
+    // Get first ~160 characters (roughly 30 words)
+    $meta_desc = wp_trim_words($content, 30, '...');
+    
+    return $meta_desc;
+  }
+endif;
+
+/**
+ * Functions which get primary category
+ * 
+ */
+if (!function_exists('cfu_get_primary_category')) :
+	function cfu_get_primary_category($post_id = null, $classes = '') {
+		if (!$post_id) {
+			$post_id = get_the_ID();
+		}
+
+		// Initialize return array
+		$category_data = array(
+			'category_link' => '',
+			'category_display' => ''
+		);
+
+		$categories = get_the_category($post_id);
+			
+		if ($categories) {
+			if (class_exists('RankMath')) {
+				// Get primary category from Rank Math
+				$primary_cat_id = get_post_meta($post_id, 'rank_math_primary_category', true);
+					
+				if ($primary_cat_id) {
+					$term = get_term($primary_cat_id, 'category');
+					
+					if (!is_wp_error($term)) {
+						// Use Rank Math's primary category
+						$category_data['category_display'] = $term->name;
+						$category_data['category_link'] = get_category_link($term->term_id);
+					} else {
+						// Fallback to first category if there's an error
+						$category_data['category_display'] = $categories[0]->name;
+						$category_data['category_link'] = get_category_link($categories[0]->term_id);
+					}
+				} else {
+					// No primary category set in Rank Math, fall back to first category
+					$category_data['category_display'] = $categories[0]->name;
+					$category_data['category_link'] = get_category_link($categories[0]->term_id);
+				}
+			} else {
+				// Default to the first category if Rank Math isn't active
+				$category_data['category_display'] = $categories[0]->name;
+				$category_data['category_link'] = get_category_link($categories[0]->term_id);
+			}
+		}
+
+			return $category_data;
+	}
+endif;

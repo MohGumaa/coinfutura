@@ -59,14 +59,29 @@ time {
 	@apply cursor-pointer inline-block rounded-4xl text-sm font-semibold text-white bg-black dark:bg-gray-700 hover:bg-gray-800 dark:hover:bg-gray-600 px-4 min-sm:px-10 py-2;
 }
 
+.menu {
+	@apply text-sm text-gray-950 dark:text-white;
+}
+
 .cfn-title,
 .page-title,
+.entry-title,
+.article-badge,
+.article-title,
 .cfu-widget-title {
 	@apply text-gray-950 dark:text-white;
 }
 
-.menu {
-	@apply text-sm text-gray-950 dark:text-white;
+.article-excerpt {
+	@apply text-gray-600 dark:text-gray-400;
+}
+
+.article-badge {
+	@apply bg-gray-950/5 dark:bg-white/10 ring-1 ring-gray-500/10 ring-inset font-medium rounded-full py-1;
+}
+
+.article-badge, .entry-footer a:not(.post-edit-link) {
+	@apply inline-flex items-center justify-center capitalize no-underline px-2;
 }
 
 .facebook-bg, .facebook a {

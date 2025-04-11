@@ -132,21 +132,21 @@ if ( ! function_exists( 'cfu_entry_footer' ) ) :
 		if ( 'post' === get_post_type() ) {
 
 			// Posted by.
-			cfu_posted_by();
+			// cfu_posted_by();
 
 			// Posted on.
-			cfu_posted_on();
+			// cfu_posted_on();
 
 			/* translators: used between list items, there is a space after the comma. */
-			$categories_list = get_the_category_list( __( ', ', 'coinfutura' ) );
-			if ( $categories_list ) {
-				printf(
-				/* translators: 1: posted in label, only visible to screen readers. 2: list of categories. */
-					'<span class="sr-only">%1$s</span>%2$s',
-					esc_html__( 'Posted in', 'coinfutura' ),
-					$categories_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-				);
-			}
+			// $categories_list = get_the_category_list( __( ', ', 'coinfutura' ) );
+			// if ( $categories_list ) {
+			// 	printf(
+			// 	/* translators: 1: posted in label, only visible to screen readers. 2: list of categories. */
+			// 		'<span class="sr-only">%1$s</span>%2$s',
+			// 		esc_html__( 'Posted in', 'coinfutura' ),
+			// 		$categories_list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			// 	);
+			// }
 
 			/* translators: used between list items, there is a space after the comma. */
 			$tags_list = get_the_tag_list( '', __( ', ', 'coinfutura' ) );
@@ -161,9 +161,9 @@ if ( ! function_exists( 'cfu_entry_footer' ) ) :
 		}
 
 		// Comment count.
-		if ( ! is_singular() ) {
-			cfu_comment_count();
-		}
+		// if ( ! is_singular() ) {
+		// 	cfu_comment_count();
+		// }
 
 		// Edit post link.
 		edit_post_link(
@@ -196,9 +196,9 @@ if ( ! function_exists( 'cfu_post_thumbnail' ) ) :
 		if ( is_singular() ) :
 			?>
 
-			<figure>
+			<figure class="rounded overflow-hidden w-full">
 				<?php the_post_thumbnail(); ?>
-			</figure><!-- .post-thumbnail -->
+			</figure>
 
 			<?php
 		else :
@@ -258,11 +258,31 @@ if ( ! function_exists( 'cfu_the_posts_navigation' ) ) :
 	 * Wraps `the_posts_pagination` for use throughout the theme.
 	 */
 	function cfu_the_posts_navigation() {
+		global $wp_query;
+
+		$total_posts   = $wp_query->found_posts;
+		$posts_per_page = intval( get_query_var( 'posts_per_page' ) );
+		$current_page  = max( 1, get_query_var( 'paged' ) );
+		$start_post    = ( $current_page - 1 ) * $posts_per_page + 1;
+		$end_post      = min( $total_posts, $current_page * $posts_per_page );
+
+		echo '<div class="hidden md:block post-range">';
+		echo sprintf( '<p class="text-sm text-gray-600 dark:text-gray-400">Showing %d to %d of %d results</p>', $start_post, $end_post, $total_posts );
+		echo '</div>';
+
+		
 		the_posts_pagination(
 			array(
-				'mid_size'  => 2,
-				'prev_text' => __( 'Newer posts', 'coinfutura' ),
-				'next_text' => __( 'Older posts', 'coinfutura' ),
+				'mid_size'  => 1,
+				'prev_text' => 
+					'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="h-5 w-5 inline-block" fill="currentColor" class="bi bi-arrow-left-short" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M12 8a.5.5 0 0 1-.5.5H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5a.5.5 0 0 1 .5.5"/>
+					</svg><span class="hidden md:block">' . __( 'previous', 'coinfutura' ). '</span>' ,
+				'next_text' => 
+					'<span class="hidden md:block">' . __( 'next', 'coinfutura' ) . '</span>' . 
+					'<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="h-5 w-5 inline-block" fill="currentColor" class="bi bi-arrow-right-short" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8"/>
+					</svg>',
 			)
 		);
 	}
