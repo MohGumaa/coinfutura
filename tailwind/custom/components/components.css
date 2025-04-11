@@ -1,3 +1,18 @@
+.pagination .nav-links {
+	@apply inline-flex items-center gap-x-1.5;
+}
+
+.pagination .page-numbers {
+	@apply min-md:min-w-10 h-10 rounded inline-flex items-center justify-center p-2 min-md:px-3 text-xs md:text-sm font-medium capitalize no-underline border border-gray-950/5 dark:border-white/10 bg-transparent hover:bg-gray-100 dark:hover:bg-white/10;
+}
+
+.pagination .current {
+	@apply border-sky-400 hover:border-sky-400;
+}
+
+.pagination .dots {
+	@apply bg-transparent hover:bg-transparent
+}
 
 .cfu-footer .menu {
 	@apply space-y-5 leading-6;
@@ -8,6 +23,10 @@
 }
 
 /* Utilities Class */
+.wp-post-image {
+	@apply relative overflow-hidden after:content-[""] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-gray-950/5 dark:after:bg-white/10 after:rounded-md after:animate-pulse after:duration-300 object-cover aspect-video w-full h-full rounded;
+}
+
 .container-center {
 	@apply mx-auto px-3;
 }
@@ -20,12 +39,69 @@
 	@apply flex justify-center items-center;
 }
 
+time {
+	@apply capitalize;
+}
+
+.search-form {
+	@apply flex items-center gap-2;
+}
+
+.search-form > label {
+	@apply grow;
+}
+
+.search-field {
+	@apply placeholder:text-gray-500 text-gray-950/50 dark:text-white/50 dark:bg-white/5 inset-ring inset-ring-gray-950/8 dark:inset-ring-white/15 focus-visible:outline-none rounded-full w-full px-4 py-1.5;
+}
+
+.search-submit {
+	@apply cursor-pointer inline-block rounded-4xl text-sm font-semibold text-white bg-black dark:bg-gray-700 hover:bg-gray-800 dark:hover:bg-gray-600 px-4 min-sm:px-10 py-2;
+}
+
+.cfn-title,
+.page-title,
 .cfu-widget-title {
 	@apply text-gray-950 dark:text-white;
 }
 
 .menu {
 	@apply text-sm text-gray-950 dark:text-white;
+}
+
+.facebook-bg, .facebook a {
+  background: linear-gradient(227.96deg, #3b5998 11.38%, #2b4170 84.07%);
+}
+
+.twitter-bg, .twitter a, .black-bg {
+  background: linear-gradient(227.96deg, #000000 11.38%, #121212 84.07%);
+}
+
+.reddit-bg, .reddit a {
+  background: linear-gradient(262.85deg, #f45c9f 5.57%, #ff7563 73.65%);
+}
+
+.linkedin-bg, .linkedin a {
+  background: linear-gradient(227.96deg, #0077b5 11.38%, #00a0dc 84.07%);
+}
+
+.telegram-bg, .telegram a {
+  background: linear-gradient(#36aee0, #1c96d1);
+}
+
+.rss-bg, .rss a {
+  background: #f48225;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
 }
 
 /* .page-title,

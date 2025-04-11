@@ -271,10 +271,10 @@ get_header();
 				</clipPath>
 			</defs>
 		</svg>
-		<h1 class="tracking-tighter text-balance page-title text-2xl md:text-3xl font-semibold mb-3">
+		<h1 class="tracking-tighter text-balance page-title text-2xl md:text-3xl font-bold mb-3">
 			<?php esc_html_e( 'Page Not Found', 'coinfutura' ); ?>
 		</h1>
-		<div <?php cfu_content_class( 'page-content max-sm:text-sm' ); ?>>
+		<div <?php cfu_content_class( 'page-content' ); ?>>
 			<p class="mb-9"><?php esc_html_e( 'This page could not be found. It might have been removed or renamed, or it may never have existed.', 'coinfutura' ); ?></p>
 			<?php get_search_form(); ?>
 		</div>
