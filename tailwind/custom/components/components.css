@@ -1,3 +1,15 @@
+/* Utilities Class */
+.container-center {
+	@apply mx-auto px-3;
+}
+
+.full-content {
+	@apply flex flex-col flex-1 w-full min-w-0;
+}
+
+.flexCenter {
+	@apply flex justify-center items-center;
+}
 
 /* .page-title,
 .entry-title {
