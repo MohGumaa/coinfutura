@@ -149,7 +149,7 @@ if ( ! function_exists( 'cfu_entry_footer' ) ) :
 			// }
 
 			/* translators: used between list items, there is a space after the comma. */
-			$tags_list = get_the_tag_list( '', __( ', ', 'coinfutura' ) );
+			$tags_list = get_the_tag_list( '', __( ' ', 'coinfutura' ) );
 			if ( $tags_list ) {
 				printf(
 				/* translators: 1: tags label, only visible to screen readers. 2: list of tags. */

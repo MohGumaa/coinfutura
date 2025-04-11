@@ -93,6 +93,10 @@ time {
 	@apply border-b-2 border-gray-950/5 dark:border-white/10 relative after:absolute after:content-[""] after:left-0 after:-bottom-0.5 after:w-16 after:h-0.5 after:bg-radial-crypto pb-3;
 }
 
+.article-title, .cfu-sidebar li a {
+	@apply no-underline hover:text-sky-400;
+}
+
 .article-excerpt {
 	@apply text-gray-600 dark:text-gray-400;
 }
@@ -107,6 +111,18 @@ time {
 
 .article-primary_category, .entry-footer a:not(.post-edit-link) {
 	@apply bg-radial-crypto text-gray-950 py-0.5 rounded-xs font-bold;
+}
+
+.float-primary_category, .float-primary_category-top {
+	@apply absolute left-2  text-black py-1 px-2 text-xs rounded-sm font-bold uppercase z-10;
+}
+
+.float-primary_category {
+	@apply bottom-2 top-auto;
+}
+
+.float-primary_category-top {
+	@apply top-2 bottom-auto;
 }
 
 .entry-footer a:not(.post-edit-link) {
@@ -156,31 +172,26 @@ time {
 	scrollbar-width: none;  /* Firefox */
 }
 
-/* .page-title,
-.entry-title {
-	@apply max-w-content mx-auto mb-6 text-3xl font-extrabold text-neutral-900;
-} */
-
-/* Content width from the `theme.json` file */
-/* .page-content > *,
-.entry-content > * {
-	@apply max-w-content mx-auto;
-} */
-/* Wide width from the `theme.json` file */
-/* .entry-content > .alignwide {
-	
-	@apply max-w-wide;
+.cfu-social {
+	@apply flex flex-wrap items-center gap-2;
 }
 
-.entry-content > .alignfull {
-	@apply max-w-none;
+.cfu-social .cfu-social-icon {
+	@apply text-white opacity-100 hover:opacity-85 hover:bg-current;
 }
 
-.entry-content > .alignleft {
-	@apply float-left mr-8;
+.cfu-log-bottom {
+	@apply block w-40 lg:w-44 h-auto no-underline;
 }
 
-.entry-content > .alignright {
-	@apply float-right ml-8;
-} */
+.cfu-text-sm {
+	@apply text-sm leading-6;
+}
 
+.cfu-social-icon {
+	@apply flex items-center justify-center size-8 rounded-full bg-white/60 hover:bg-white dark:bg-white/10 dark:hover:bg-gray-700 dark:text-white text-gray-950 ring inset-ring ring-gray-950/10 inset-ring-white/10 dark:ring-transparent p-1;
+}
+
+.shares-list__item {
+	@apply shrink-0 w-10 max-w-10 h-10 max-h-10 rounded;
+}
