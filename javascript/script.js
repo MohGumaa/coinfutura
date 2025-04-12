@@ -2,6 +2,63 @@ document.addEventListener('DOMContentLoaded', function () {
 	initializeTheme();
 	setupThemeToggleListeners();
 	watchSystemPreference();
+
+	// Mobile menu toggle functionality
+	const primaryMenuBtn = document.getElementById('primary-menu-btn');
+	const navigationContainer = document.getElementById('navigation-container');
+	const headerNav = document.getElementById('header-nav');
+	const html = document.documentElement;
+
+	// Calculate and set navigation top position based on header height
+	const updateNavPosition = () => {
+		if (window.innerWidth < 1024) {
+			const headerHeight = headerNav.offsetHeight;
+			navigationContainer.style.top = `${headerHeight}px`;
+			// Update the height calculation too
+			navigationContainer.style.height = `calc(100dvh - ${headerHeight}px)`;
+		} else {
+			navigationContainer.style.height = '100%';
+			navigationContainer.style.top = ''; // Reset top position
+		}
+	}
+
+	// Run on page load
+	updateNavPosition();
+
+	// Also run on window resize
+	window.addEventListener('resize', updateNavPosition);
+
+	const handlePrimaryMenuBtnClick = () => {
+		// Toggle aria-expanded
+		const isExpanded =
+			primaryMenuBtn.getAttribute('aria-expanded') === 'true';
+		primaryMenuBtn.setAttribute('aria-expanded', !isExpanded);
+
+		// Toggle menu visibility
+		if (isExpanded) {
+			// Hide menu
+			navigationContainer.classList.add('max-lg:translate-x-[-100%]');
+			navigationContainer.classList.remove('max-lg:translate-x-[0]');
+
+			// Remove open class from menu button
+			primaryMenuBtn.classList.remove('open');
+		} else {
+			// Show menu
+			navigationContainer.classList.remove('max-lg:translate-x-[-100%]');
+			navigationContainer.classList.add('max-lg:translate-x-[0]');
+
+			// Add open class to menu button
+			primaryMenuBtn.classList.add('open');
+		}
+
+		// Add overflow to HTML element
+		html.classList.toggle('overflow-hidden');
+
+		// Ensure proper positioning when menu is toggled
+		updateNavPosition();
+	};
+
+	primaryMenuBtn.addEventListener('click', handlePrimaryMenuBtnClick);
 });
 
 function initializeTheme() {

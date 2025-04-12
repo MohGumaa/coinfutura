@@ -207,3 +207,11 @@ time {
 .prose .cfu-points li::marker {
   @apply text-cfu;
 }
+
+.cfu-bar-icon {
+	@apply before:transition-all before:duration-700 before:ease-[cubic-bezier(0.77,0,0.175,1)] before:content-[""] before:absolute before:left-0 before:top-[9px] before:w-7 before:h-0.5 before:bg-gray-500 dark:before:bg-gray-400 transition-all duration-700 ease-[cubic-bezier(0.77,0,0.175,1)] absolute left-0 w-7 h-0.5 bg-gray-500 dark:bg-gray-400 after:content-[""] after:absolute after:left-0 after:top-[-9px] after:w-7 after:h-0.5 after:bg-gray-500 dark:after:bg-gray-400 after:transition-all after:duration-700 after:ease-[cubic-bezier(0.77,0,0.175,1)];
+}
+
+.open .cfu-bar-icon {
+	@apply bg-transparent before:top-0 before:bg-gray-800 dark:before:bg-white before:rotate-[-225deg] after:top-0 after:bg-gray-800 dark:after:bg-white after:rotate-[225deg];
+}
