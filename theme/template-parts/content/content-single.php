@@ -126,12 +126,14 @@ $share_urls = cfu_get_share_urls($cfu_post_id);
 			<?php endif;?>
 		</div>
 
-		<a class="flex items-center gap-2 mb-5 hover:text-sky-400 url fn n" href="<?php echo $cfu_author_url; ?>">
+		<a class="inline-flex items-center gap-2 mb-5 hover:text-sky-400 url fn n" href="<?php echo $cfu_author_url; ?>">
 			<?php echo $cfu_avatar_img; ?>
-			<span>
-				<span class="sr-only"><?php esc_html_e('Posted by', 'coinfutura'); ?></span>
-				<?php echo $cfu_author_name; ?>
-			</span>
+			<div class="flex-shrink-0">
+				<span>
+					<span class="sr-only"><?php esc_html_e('Written by', 'coinfutura'); ?></span>
+					<?php echo esc_html_e('Written by', 'coinfutura') . ' '; ?><span class="underline"><?php echo $cfu_author_name; ?></span>
+				</span>
+			</div>
 		</a>
 
 		<figure class="rounded-lg lg:rounded-xl overflow-hidden w-full relative">
