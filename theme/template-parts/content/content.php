@@ -21,13 +21,18 @@ $cfu_time_data = cfu_post_time($cfu_post_id);
 	$published_date_time,
 ] = $cfu_time_data;
 
+$default_img = get_theme_file_uri( 'assets/images/cfu-banner.jpg' );
 $default_icon = get_theme_file_uri( 'assets/images/cfu-icon.webp' );
 ?>
 
 <article id="post-<?php echo esc_attr($cfu_post_id); ?>" class="flex items-center gap-x-3 md:gap-x-4 max-sm:px-1.5 p-3 bg-gray-950/5 dark:bg-white/10 rounded">
 	<figure class="block flex-shrink-0">
 		<a href="<?php echo $cfu_permalink; ?>" aria-hidden="true" tabindex="-1" class="block w-24 md:w-48 h-[90px] md:h-32 overflow-hidden">
-			<?php the_post_thumbnail('cfu-blog-featured', array('class' => 'object-cover w-full h-full rounded wp-post-image')); ?>
+			<?php if (has_post_thumbnail($cfu_post_id)) : ?>
+				<?php the_post_thumbnail('cfu-blog-featured', array('class' => 'object-cover w-full h-full rounded')); ?>
+			<?php else : ?>
+				<img width="300" height="180" src="<?php echo $default_img;?>" alt="<?php echo esc_html($cfu_title); ?>" class="w-full h-full object-cover rounded">
+			<?php endif; ?>
 		</a>
 	</figure>
 	<div class="flex-1 space-y-2">

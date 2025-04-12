@@ -33,7 +33,7 @@ if (function_exists('get_field')) {
 	$cfu_avatar_url = get_field('profile_picture', 'user_' . $cfu_author_id);
 	if ($cfu_avatar_url) {
 		$cfu_avatar_img = sprintf(
-			'<img src="%s" alt="%s" class="w-full h-full rounded-full object-cover wp-post-image">',
+			'<img src="%s" alt="%s" class="flex-shrink-0 w-10 h-10 rounded-full object-cover wp-post-image">',
 			esc_url($cfu_avatar_url['sizes']['large']),
 			esc_attr($cfu_alt_text)
 		);
@@ -46,16 +46,9 @@ if (empty($cfu_avatar_img)) {
 		40, 
 		'', 
 		$cfu_alt_text, 
-		['class' => 'w-full h-full rounded-full object-cover wp-post-image']
+		['class' => 'flex-shrink-0 w-10 h-10 rounded-full object-cover wp-post-image']
 	);
 }
-
-// Wrap the avatar in an author link
-$cfu_avatar = sprintf(
-	'<a href="%s" class="inline-block flex-shrink-0 w-10 h-10">%s</a>',
-	$cfu_author_url,
-	$cfu_avatar_img
-);
 
 
 function cfu_get_share_urls($cfu_post_id) {
@@ -110,38 +103,36 @@ $share_urls = cfu_get_share_urls($cfu_post_id);
 ?>
 
 <article id="post-<?php echo esc_attr($cfu_post_id); ?>" <?php post_class(); ?>>
-	<div class="article-entry-meta text-sm font-medium space-y-4 mb-8">
-		<?php the_title('<h1 class="inline-block tracking-tight text-pretty font-bold text-2xl md:text-3xl lg:text-[2.5rem]/10 lg:leading-12 text-gray-950 dark:text-gray-200">', '</h1>'); ?>
-		<p class="article-excerpt"><?php echo esc_html(cfu_get_meta_description($cfu_post_id)); ?></p>
-		<div class="flex items-center gap-3 mb-5">
-			<?php echo $cfu_avatar; ?>
-			<div class="flex flex-col max-sm:gap-y-0.5">
-				<span class="author vcard">
-					<span class="sr-only"><?php esc_html_e('Posted by', 'coinfutura'); ?></span>
-					<a class="hover:text-sky-400 url fn n" href="<?php echo $cfu_author_url; ?>">
-						<?php echo $cfu_author_name; ?>
-					</a>
-				</span>
-				<div class="flex flex-wrap gap-x-1 gap-y-0.5">
-					<time datetime="<?php echo esc_attr($published_date_time); ?>">
-						<?php 
-							esc_html_e('Published on', 'coinfutura');
-							echo ' ' . esc_html($published_time) . ' ';
-							esc_html_e('GST', 'coinfutura');
-						?>
-					</time>
-					<?php if (!$cfu_is_press_release && $is_updated) : ?>
-						<time datetime="<?php echo esc_attr($modified_date_time); ?>" class="md:border-s md:ps-1">
-							<?php 
-								esc_html_e('Updated on', 'coinfutura');
-								echo ' ' . esc_html($modified_time) . ' ';
-								esc_html_e('GST', 'coinfutura');
-							?>
-						</time>
-					<?php endif; ?>
-				</div>
-			</div>
+	<div class="article-entry-meta text-sm font-medium mb-8">
+		<?php the_title('<h1 class="inline-block tracking-tight text-pretty font-bold text-2xl md:text-3xl lg:text-[2.5rem]/10 lg:leading-12 text-gray-950 dark:text-gray-200 mb-4">', '</h1>'); ?>
+		<p class="article-excerpt mb-3"><?php echo esc_html(cfu_get_meta_description($cfu_post_id)); ?></p>
+
+		<div class="flex flex-col md:flex-row md:items-center gap-1.5 text-gray-800 dark:text-gray-300 font-semibold timestamp mb-3.5">
+			<time datetime="<?php echo esc_attr($published_date_time); ?>">
+				<?php 
+					esc_html_e('Published on', 'coinfutura');
+					echo ' ' . esc_html($published_time) . ' ';
+					esc_html_e('GST', 'coinfutura');
+				?>
+			</time>
+			<?php if (!$cfu_is_press_release && $is_updated) :?>
+				<time datetime="<?php echo esc_attr($modified_date_time); ?>" class="md:border-s md:ps-1.5">
+					<?php 
+						esc_html_e('Updated on', 'coinfutura');
+						echo ' ' . esc_html($modified_time) . ' ';
+						esc_html_e('GST', 'coinfutura');
+					?>
+				</time>
+			<?php endif;?>
 		</div>
+
+		<a class="flex items-center gap-2 mb-5 hover:text-sky-400 url fn n" href="<?php echo $cfu_author_url; ?>">
+			<?php echo $cfu_avatar_img; ?>
+			<span>
+				<span class="sr-only"><?php esc_html_e('Posted by', 'coinfutura'); ?></span>
+				<?php echo $cfu_author_name; ?>
+			</span>
+		</a>
 
 		<figure class="rounded-lg lg:rounded-xl overflow-hidden w-full relative">
 			<?php the_post_thumbnail(); ?>

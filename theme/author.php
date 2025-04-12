@@ -68,7 +68,7 @@ get_header();
 						</p>
 					<?php endif; ?>
 					<?php if (!empty(array_filter($author_meta['social']))) : ?>
-						<div class="flex justify-center sm:justify-start items-center gap-4 pt-3">
+						<div class="flex justify-start items-center max-md:justify-center gap-4 pt-3">
 							<?php foreach ($author_meta['social'] as $platform => $url) : ?>
 								<?php if ($url && isset($social_icons[$platform])) : ?>
 									<a href="<?php echo esc_url($url); ?>"

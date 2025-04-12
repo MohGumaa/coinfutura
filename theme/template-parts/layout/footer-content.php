@@ -14,7 +14,7 @@ defined( 'ABSPATH' ) || exit;
 <?php endif; ?>
 
 <div class="flex flex-col items-center gap-6 sm:flex-row sm:justify-between sm:gap-8 pt-10 pb-24 container-center w-full">
-	<div class="relative z-0 inline-grid grid-cols-3 gap-0.5 rounded-full bg-gray-950/5 p-0.75 text-gray-950 dark:bg-white/10 dark:text-white" id="headlessui-radiogroup-:Rcaulb:" role="radiogroup">
+	<div class="min-sm:hidden relative z-0 inline-grid grid-cols-3 gap-0.5 rounded-full bg-gray-950/5 p-0.75 text-gray-950 dark:bg-white/10 dark:text-white" id="headlessui-radiogroup-:Rcaulb:" role="radiogroup">
 		<span class="rounded-full p-1.5 *:size-7 data-checked:bg-white data-checked:ring data-checked:inset-ring data-checked:ring-gray-950/10 data-checked:inset-ring-white/10 sm:p-0 dark:data-checked:bg-gray-700 dark:data-checked:text-white dark:data-checked:ring-transparent" aria-label="System theme" id="headlessui-radio-:Rdcaulb:" role="radio" aria-checked="true" tabindex="0" data-headlessui-state="">
 			<svg viewBox="0 0 28 28" fill="none">
 				<path d="M7.5 8.5C7.5 7.94772 7.94772 7.5 8.5 7.5H19.5C20.0523 7.5 20.5 7.94772 20.5 8.5V16.5C20.5 17.0523 20.0523 17.5 19.5 17.5H8.5C7.94772 17.5 7.5 17.0523 7.5 16.5V8.5Z" stroke="currentColor"></path>

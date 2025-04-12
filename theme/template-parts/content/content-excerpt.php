@@ -21,6 +21,7 @@ $cfu_time_data = cfu_post_time($cfu_post_id);
 	$published_date_time,
 ] = $cfu_time_data;
 
+$default_img = get_theme_file_uri( 'assets/images/cfu-banner.jpg' );
 $default_icon = get_theme_file_uri( 'assets/images/cfu-icon.webp' );
 ?>
 <article id="post-<?php echo $cfu_post_id; ?>" class="grid grid-cols-1 md:grid-cols-12 gap-4 mb-6 pb-6 border-b border-gray-950/5 dark:border-white/10 last:border-b-0 last:mb-0 last:pb-0">
@@ -59,8 +60,12 @@ $default_icon = get_theme_file_uri( 'assets/images/cfu-icon.webp' );
 		<p class="line-clamp-2 text-sm article-excerpt"><?php echo esc_html(cfu_get_meta_description($cfu_post_id)); ?></p>
 	</div>
 	<figure class="col-span-full md:col-span-3 order-1 md:order-2">
-		<a href="<?php echo $cfu_permalink; ?>" class="block w-full h-52 md:h-32 lg:h-28 xl:h-[114px] 2xl:h-[150px] rounded overflow-hidden">
-			<?php the_post_thumbnail('cfu-blog-featured', array('class' => 'w-full h-full object-cover')); ?>
+		<a href="<?php echo $cfu_permalink; ?>" class="block w-full h-52 md:h-32 lg:h-28 xl:h-[114px] 2xl:h-[150px] overflow-hidden">
+			<?php if (has_post_thumbnail($cfu_post_id)) : ?>
+				<?php the_post_thumbnail('cfu-blog-featured', array('class' => 'w-full h-full object-cover rounded')); ?>
+			<?php else : ?>
+				<img width="300" height="180" src="<?php echo $default_img;?>" alt="<?php echo esc_html($cfu_title); ?>" class="w-full h-full object-cover rounded">
+			<?php endif; ?>
 		</a>
 	</figure>
 </article>
