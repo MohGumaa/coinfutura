@@ -64,7 +64,7 @@ $default_icon = get_theme_file_uri( 'assets/images/cfu-icon.webp' );
 			<?php if (has_post_thumbnail($cfu_post_id)) : ?>
 				<?php the_post_thumbnail('cfu-blog-featured', array('class' => 'w-full h-full object-cover rounded')); ?>
 			<?php else : ?>
-				<img width="300" height="180" src="<?php echo $default_img;?>" alt="<?php echo esc_html($cfu_title); ?>" class="w-full h-full object-cover rounded">
+				<img width="300" height="180" src="<?php echo $default_img;?>" alt="<?php echo $cfu_title; ?>" class="w-full h-full object-cover rounded">
 			<?php endif; ?>
 		</a>
 	</figure>

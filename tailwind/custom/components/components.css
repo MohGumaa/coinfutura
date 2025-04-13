@@ -215,3 +215,7 @@ time {
 .open .cfu-bar-icon {
 	@apply bg-transparent before:top-0 before:bg-gray-800 dark:before:bg-white before:rotate-[-225deg] after:top-0 after:bg-gray-800 dark:after:bg-white after:rotate-[225deg];
 }
+
+.cfu-mb-8 {
+	@apply mb-8;
+}
