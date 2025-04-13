@@ -55,7 +55,7 @@ class Coinfutura_Walker_Nav_Menu extends Walker_Nav_Menu {
 		if ( $depth === 0 ) {
 			$atts['class'] = 'menu-item-type-taxonomy-link font-medium text-gray-950 dark:text-white max-lg:text-xl min-lg:mx-2 min-lg:mx-2.5 min-lg:flex min-lg:items-center group-hover:border-b border-gray-950 dark:border-white group-hover:text-blue-600 dark:group-hover:text-blue-400';
 		} else {
-			$atts['class'] = 'block text-sm transition duration-150 ease-in-out max-lg:text-gray-600 max-lg:dark:text-gray-300 max-lg:underline min-lg:text-base min-lg:text-gray-800 min-lg:dark:text-gray-200 min-lg:hover:bg-gray-100 min-lg:dark:hover:bg-gray-700 min-lg:dark:hover:text-white min-lg:py-2 min-lg:px-4';
+			$atts['class'] = 'block text-sm transition duration-150 ease-in-out max-lg:text-gray-600 max-lg:dark:text-gray-300 max-lg:underline min-lg:text-gray-800 min-lg:dark:text-gray-200 min-lg:hover:bg-gray-100 min-lg:dark:hover:bg-gray-700 min-lg:dark:hover:text-white min-lg:py-2 min-lg:px-4';
 		}
 			
 		/**
@@ -137,7 +137,7 @@ class Coinfutura_Walker_Nav_Menu extends Walker_Nav_Menu {
 <header id="masthead" class="sticky inset-x-0 top-0 z-50 bg-white dark:bg-gray-950 border-y border-black/5 dark:border-white/10 shadow-xs backdrop-blur">
 	<div class="grid grid-cols-1 grid-rows-[1fr_1px_auto_1px_auto] justify-center [--gutter-width:2.5rem] lg:grid-cols-[var(--gutter-width)_minmax(0,var(--breakpoint-2xl))_var(--gutter-width)] max-md:overflow-x-hidden">
 		<div class="col-start-1 row-span-full row-start-1 hidden lg:block"></div>
-		<div id="header-nav" class="flex items-center justify-between gap-8 px-1.5 lg:px-0 h-14">
+		<div id="header-nav" class="flex items-center justify-between gap-8 px-2.5 lg:px-0 h-14">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="flex items-center gap-1.5 min-lg:me-2">
 				<svg class="hidden dark:inline-block w-32 h-[45.5px]" viewBox="0 0 146 52" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<g clip-path="url(#clip0_746_66)">
@@ -212,7 +212,8 @@ class Coinfutura_Walker_Nav_Menu extends Walker_Nav_Menu {
 						);
 					?>
 				</nav>
-				<div class="flex-shrink-0 min-lg:w-24 max-lg:w-full max-lg:text-sm min-sm:h-11 min-lg:h-auto relative z-0 inline-grid grid-cols-3 gap-0.5 rounded-lg min-lg:rounded-full bg-gray-950/5 p-1 min-lg:p-0.75 text-gray-950 dark:bg-white/10 dark:text-white" role="radiogroup">
+				
+				<div class="flex-shrink-0 min-lg:w-24 max-lg:w-full max-lg:text-sm min-sm:h-11 min-lg:h-auto relative z-0 inline-grid grid-cols-3 gap-0.5 rounded-lg min-lg:rounded-full bg-gray-950/5 p-1 min-lg:p-0.75 text-gray-950 dark:bg-white/10 dark:text-white" id="headlessui-radiogroup-:Rcaulb:" role="radiogroup">
 					<span class="max-lg:flex max-lg:items-center max-lg:gap-x-1 capitalize rounded-md min-lg:rounded-full p-1.5 min-lg:*:size-7 data-checked:bg-white data-checked:ring data-checked:inset-ring data-checked:ring-gray-950/10 data-checked:inset-ring-white/10 sm:p-0 dark:data-checked:bg-gray-700 dark:data-checked:text-white dark:data-checked:ring-transparent" aria-label="System theme" id="headlessui-radio-:Rdcaulb:" role="radio" aria-checked="true" tabindex="0" data-headlessui-state="">
 						<svg viewBox="0 0 28 28" fill="none" class="max-lg:w-6 max-lg:h-6">
 							<path d="M7.5 8.5C7.5 7.94772 7.94772 7.5 8.5 7.5H19.5C20.0523 7.5 20.5 7.94772 20.5 8.5V16.5C20.5 17.0523 20.0523 17.5 19.5 17.5H8.5C7.94772 17.5 7.5 17.0523 7.5 16.5V8.5Z" stroke="currentColor"></path>
@@ -247,7 +248,7 @@ class Coinfutura_Walker_Nav_Menu extends Walker_Nav_Menu {
 			</div>
 
 			<div class="flex items-center gap-2 min-lg:hidden">
-				<button aria-controls="primary-menu" aria-expanded="false" type="button" id="primary-menu-btn" class="relative w-7 border-none outline-none flexCenter cursor-pointer navbar-toggler">
+				<button aria-controls="primary-menu" aria-expanded="false" type="button" id="primary-menu-btn" class="relative w-7 h-7 border-none outline-none flexCenter cursor-pointer navbar-toggler">
 					<span class="cfu-bar-icon"></span>
 				</button>
 			</div>

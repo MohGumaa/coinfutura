@@ -219,3 +219,7 @@ time {
 .cfu-mb-8 {
 	@apply mb-8;
 }
+
+.cfu-font-medium {
+	@apply font-medium;
+}

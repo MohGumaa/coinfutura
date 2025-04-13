@@ -90,6 +90,8 @@ function setupThemeToggleListeners() {
 	);
 	if (!radioGroup) return;
 
+	console.log(radioGroup)
+
 	const radioButtons = {
 		system: document.getElementById('headlessui-radio-:Rdcaulb:'),
 		light: document.getElementById('headlessui-radio-:Rlcaulb:'),

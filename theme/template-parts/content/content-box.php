@@ -39,7 +39,6 @@ $default_img = get_theme_file_uri( 'assets/images/cfu-banner.jpg' );
 				</span>
 			<?php endif; ?>
 		</figure>
-		
 		<div class="p-3">
 			<h3 class="font-medium text-base line-clamp-2 mb-2 article-title">
 				<?php echo $cfu_title;?>
