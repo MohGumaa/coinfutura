@@ -55,7 +55,7 @@ class Coinfutura_Walker_Nav_Menu extends Walker_Nav_Menu {
 		if ( $depth === 0 ) {
 			$atts['class'] = 'menu-item-type-taxonomy-link font-medium text-gray-950 dark:text-white max-lg:text-xl min-lg:mx-2 min-lg:mx-2.5 min-lg:flex min-lg:items-center group-hover:border-b border-gray-950 dark:border-white group-hover:text-blue-600 dark:group-hover:text-blue-400';
 		} else {
-			$atts['class'] = 'block text-sm transition duration-150 ease-in-out max-lg:text-gray-600 max-lg:dark:text-gray-300 max-lg:underline min-lg:text-gray-800 min-lg:dark:text-gray-200 min-lg:hover:bg-gray-100 min-lg:dark:hover:bg-gray-700 min-lg:dark:hover:text-white min-lg:py-2 min-lg:px-4';
+			$atts['class'] = 'block text-sm transition duration-150 ease-in-out max-lg:text-gray-600 max-lg:dark:text-gray-300 max-lg:underline min-lg:font-medium min-lg:text-gray-800 min-lg:dark:text-gray-200 min-lg:hover:bg-gray-100 min-lg:dark:hover:bg-gray-700 min-lg:dark:hover:text-white min-lg:py-2 min-lg:px-4';
 		}
 			
 		/**
