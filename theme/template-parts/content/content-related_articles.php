@@ -57,7 +57,7 @@ $related_articles = cfu_get_related_articles($cfu_post_id);
 <?php if (!empty($related_articles)) : ?>
 	<div class="col-span-full lg:col-span-12 @container isolate flex flex-col gap-2 overflow-hidden rounded-lg bg-white p-2 outline outline-gray-950/5 dark:bg-gray-950 dark:outline-white/10">
 		<h3 class="page-title font-semibold text-xl md:text-2xl capitalize title-with-underline mb-5"><?php esc_html_e('Related Articles', 'cryptofrontnews'); ?></h3>
-		<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
 			<?php
 				foreach ($related_articles as $related_post) {
 					// Set up postdata for each related post

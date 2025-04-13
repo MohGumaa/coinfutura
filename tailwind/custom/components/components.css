@@ -80,7 +80,8 @@ time {
 .entry-title,
 .article-badge,
 .article-title,
-.cfu-widget-title {
+.cfu-widget-title,
+.cfu-section-title {
 	@apply text-gray-950 dark:text-white;
 }
 
@@ -91,6 +92,10 @@ time {
 
 .title-with-underline, .cfu-widget-title-underline {
 	@apply border-b-2 border-gray-950/5 dark:border-white/10 relative after:absolute after:content-[""] after:left-0 after:-bottom-0.5 after:w-16 after:h-0.5 after:bg-radial-crypto pb-3;
+}
+
+.cfu-section-title {
+	@apply font-bold text-lg sm:text-xl md:text-[22px] capitalize;
 }
 
 .article-title, .cfu-sidebar li a {
@@ -222,4 +227,8 @@ time {
 
 .cfu-font-medium {
 	@apply font-medium;
+}
+
+.cfu-btn-more {
+	@apply inline-flex items-center gap-x-1 no-underline whitespace-nowrap text-sm font-semibold text-sky-500 hover:text-sky-600 dark:text-sky-400 capitalize;
 }
