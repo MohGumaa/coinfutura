@@ -247,7 +247,37 @@ class Coinfutura_Walker_Nav_Menu extends Walker_Nav_Menu {
 				</div>
 			</div>
 
-			<div class="flex items-center gap-2 min-lg:hidden">
+			<div id="live-search-container" class="lg:relative lg:h-full lg:flex items-center max-lg:hidden max-lg:absolute max-lg:right-3 max-lg:top-full max-lg:w-96 max-lg:py-2.5 max-lg:bg-white max-lg:dark:bg-gray-800 max-lg:border max-lg:border-gray-950/5 max-lg:dark:border-white/10 max-lg:rounded-b-lg max-lg:shadow z-50">
+				<form id="live-search-form" class="w-full max-lg:max-w-[calc(100%-12px)] mx-auto lg:w-64 xl:w-80 rounded-full px-4 py-2 text-sm/6 text-gray-600 dark:text-gray-300 dark:bg-white/5 inset-ring inset-ring-gray-400 dark:inset-ring-white/15" action="<?php echo esc_url(home_url('/')); ?>" method="get">
+					<div class="flex items-center relative">
+						<input 
+							type="text" 
+							name="s"
+							autocomplete="off"
+							id="live-search-input"
+							class="flex-1 w-full border-0 focus-visible:outline-0 text-gray-600 dark:text-gray-300 placeholder:text-gray-600 dark:placeholder:text-gray-300 bg-transparent"
+							placeholder="<?php esc_html_e('Search...', 'cryptonewsland'); ?>"
+						>
+						<button 
+							type="submit"
+							class="w-5 h-5 absolute top-1/2 -translate-y-1/2 right-0 z-10 text-gray-400 cursor-pointer"
+							aria-label="<?php esc_attr_e('Search', 'cryptonewsland'); ?>"
+						>
+							<svg class="w-5 h-5" viewBox="0 0 25 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+								<path d="M10.4365 18C12.2115 17.9996 13.9353 17.4054 15.3335 16.312L19.7295 20.708L21.1435 19.294L16.7475 14.898C17.8415 13.4997 18.4361 11.7754 18.4365 10C18.4365 5.589 14.8475 2 10.4365 2C6.02552 2 2.43652 5.589 2.43652 10C2.43652 14.411 6.02552 18 10.4365 18ZM10.4365 4C13.7455 4 16.4365 6.691 16.4365 10C16.4365 13.309 13.7455 16 10.4365 16C7.12752 16 4.43652 13.309 4.43652 10C4.43652 6.691 7.12752 4 10.4365 4Z"></path>
+							</svg>
+						</button>
+					</div>
+				</form>
+				<div id="search-results" class="hidden text-sm max-h-96 overflow-y-auto w-full lg:absolute lg:left-0 lg:top-full lg:mt-0.5 lg:bg-white lg:dark:bg-gray-800 lg:border lg:border-gray-950/5 lg:dark:border-white/10 lg:rounded-b-lg lg:shadow lg:z-50"></div>
+			</div>
+
+			<div class="flex items-center gap-x-4 min-lg:hidden">
+				<button id="search-toggle-btn" class="w-6.5 h-6.5 inline-flex text-gray-500 dark:text-gray-400">
+				<svg class="w-6.5 h-6.5" viewBox="0 0 25 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+					<path d="M10.4365 18C12.2115 17.9996 13.9353 17.4054 15.3335 16.312L19.7295 20.708L21.1435 19.294L16.7475 14.898C17.8415 13.4997 18.4361 11.7754 18.4365 10C18.4365 5.589 14.8475 2 10.4365 2C6.02552 2 2.43652 5.589 2.43652 10C2.43652 14.411 6.02552 18 10.4365 18ZM10.4365 4C13.7455 4 16.4365 6.691 16.4365 10C16.4365 13.309 13.7455 16 10.4365 16C7.12752 16 4.43652 13.309 4.43652 10C4.43652 6.691 7.12752 4 10.4365 4Z"></path>
+				</svg>
+			</button>
 				<button aria-controls="primary-menu" aria-expanded="false" type="button" id="primary-menu-btn" class="relative w-7 h-7 border-none outline-none flexCenter cursor-pointer navbar-toggler">
 					<span class="cfu-bar-icon"></span>
 				</button>

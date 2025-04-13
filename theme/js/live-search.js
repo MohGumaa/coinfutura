@@ -5,7 +5,6 @@ jQuery(document).ready(function ($) {
 	const searchInput = $('#live-search-input');
 	const resultsContainer = $('#search-results');
 
-	const BtnTopPage = $('#btn-back-to-top');
 
 	// Toggle search container on mobile button click
 	searchToggleBtn.on('click', function (e) {
@@ -95,19 +94,4 @@ jQuery(document).ready(function ($) {
 	searchContainer.on('click', function (e) {
 		e.stopPropagation();
 	});
-
-	// Hide and show button on scroll
-	$(window).scroll(function () {
-		if ($(this).scrollTop() > 50) {
-			BtnTopPage.fadeIn();
-		} else {
-			BtnTopPage.fadeOut();
-		}
-	});
-
-	BtnTopPage.on('click', function (e) {
-		e.preventDefault();
-		$('html, body').animate({ scrollTop: 0 }, '300');
-	});
-
 });

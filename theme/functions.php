@@ -161,6 +161,7 @@ add_filter( 'tiny_mce_before_init', 'cfu_tinymce_add_class' );
 /**
  * Custom template tags for this theme.
  */
+require get_template_directory() . '/inc/live-search.php';
 require get_template_directory() . '/inc/template-tags.php';
 
 /**
