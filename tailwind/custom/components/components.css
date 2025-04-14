@@ -221,8 +221,12 @@ time {
 	@apply bg-transparent before:top-0 before:bg-gray-800 dark:before:bg-white before:rotate-[-225deg] after:top-0 after:bg-gray-800 dark:after:bg-white after:rotate-[225deg];
 }
 
-.cfu-mb-8 {
-	@apply mb-8;
+.cfu-mb-4 {
+	@apply mb-4;
+}
+
+.cfu-mb-6 {
+	@apply mb-6;
 }
 
 .cfu-font-medium {
