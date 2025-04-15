@@ -24,9 +24,10 @@ $cfu_post_not_to_repeat = [];
 		// Split posts into sections
 		$all_posts = $section_zero->posts;
 		
-		$left_posts = array_slice($all_posts, 7, 2);
-		$right_posts = array_slice($all_posts, 1, 6);
 		$middle_posts = array_slice($all_posts, 0, 1);
+		$left_posts = array_slice($all_posts, 1, 2);
+		$right_posts = array_slice($all_posts, 3);
+		
 ?>
 	<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-10 section-0 isolate overflow-hidden rounded outline outline-gray-950/5 dark:outline-white/5 bg-white dark:bg-white/5 shadow-sm py-4 px-1.5 mx-2 mb-12">
 		<div class="col-span-full md:col-span-1 max-lg:order-2 space-y-4">
@@ -49,15 +50,17 @@ $cfu_post_not_to_repeat = [];
 				wp_reset_postdata(); 
 			?>
 		</div>
-		<div class="col-span-full md:col-span-1 lg:col-span-3 xl:col-span-1 max-lg:order-3 divide-y divide-gray-950/5 dark:divide-white/10">
-			<?php 
-				foreach ($right_posts as $post) {
-					setup_postdata($post); 
-					get_template_part( 'template-parts/content/content', 'title' );
-					$cfu_post_not_to_repeat[] = get_the_ID();
-				}
-				wp_reset_postdata(); 
-			?>
+		<div class="col-span-full md:col-span-1 lg:col-span-3 xl:col-span-1 max-lg:order-3">
+			<ul class="divide-y divide-gray-950/5 dark:divide-white/10 border-s border-gray-950/5 dark:border-white/10 ms-1 ps-5"> 
+				<?php 
+					foreach ($right_posts as $post) {
+						setup_postdata($post); 
+						get_template_part( 'template-parts/content/content', 'title' );
+						$cfu_post_not_to_repeat[] = get_the_ID();
+					}
+					wp_reset_postdata(); 
+				?>
+			</ul>
 		</div>
 	</section>
 <?php endif; wp_reset_postdata(); ?>

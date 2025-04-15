@@ -236,3 +236,25 @@ time {
 .cfu-btn-more {
 	@apply inline-flex items-center gap-x-1 no-underline whitespace-nowrap text-sm font-semibold text-sky-500 hover:text-sky-600 dark:text-sky-400 capitalize;
 }
+
+.penci-feed {
+	@apply before:content-[""] before:inline-block before:absolute before:w-[9px] before:h-[9px] before:left-[-25px] before:top-0 before:rounded-full before:bg-gray-de dark:before:bg-gray-700 before:transition-all before:duration-300 relative after:content-[""] after:inline-block after:absolute after:w-[9px] after:h-[9px] after:left-[-25px] after:top-0 after:rounded-full after:bg-cfu-0 dark:after:bg-cfu after:transition-all after:duration-300;
+}
+
+.penci-feed:after {
+	animation: pencisonar 1.5s ease infinite;
+}
+
+@keyframes pencisonar {
+	0% {
+		opacity: 0;
+    transform: scale(.2);
+	}
+	50% {
+		opacity: 0.9;
+	}
+	100% {
+		opacity: 0;
+    transform: scale(1);
+	}
+} 

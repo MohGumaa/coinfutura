@@ -7,6 +7,8 @@
  defined( 'ABSPATH' ) || exit;
 
 $cfu_post_id = get_the_ID();
+$cfu_title = esc_html(get_the_title());
+$cfu_permalink = esc_url(get_permalink());
 $cfu_category = cfu_get_primary_category($cfu_post_id);
 
 $cfu_time_data = cfu_post_time($cfu_post_id);
@@ -35,7 +37,12 @@ $default_icon = get_theme_file_uri( 'assets/images/cfu-icon.webp' );
 				</a>
 			<?php endif; ?>
 		</div>
-		<?php the_title( sprintf( '<h2 class="text-xl md:text-2xl lg:text-3xl font-bold mb-3"><a href="%s" class="article-title line-clamp-3" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-		<p class="line-clamp-3 max-sm:text-sm article-excerpt"><?php echo esc_html(cfu_get_meta_description($cfu_post_id)); ?></p>
+		<h1 class="text-xl md:text-2xl font-bold mb-3">
+			<a href="<?php echo $cfu_permalink; ?>" rel="bookmark" class="article-title line-clamp-3">
+			<?php echo $cfu_title; ?>
+		</a>
+		</h1>
+		<p class="line-clamp-2 max-sm:text-sm article-excerpt min-md:leading-7"><?php echo esc_html(cfu_get_meta_description($cfu_post_id)); ?></p>
+		<a href="<?php echo $cfu_permalink; ?>" class="mt-1.5 capitalize inline-block text-sm font-semibold text-sky-500 hover:text-sky-600 dark:text-sky-400"><?php esc_html_e( 'Continue Reading', 'coinfutura' ); ?></a>
 	</div>
 </article>
