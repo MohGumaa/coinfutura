@@ -71,7 +71,7 @@ $cfu_post_not_to_repeat = [];
 		'posts_per_page' => 4,
 		'post_type' => 'post',
 		'post_status' => 'publish',
-		'category_name'  => 'press-release',
+		'category_name'  => 'hot-news',
 		'no_found_rows' => true,
 		'post__not_in'   => $cfu_post_not_to_repeat,
 	]; 
@@ -79,14 +79,14 @@ $cfu_post_not_to_repeat = [];
 	$section_one = new WP_Query( $args );
 
 	if ( $section_one->have_posts() ) :
-		$section_one_id = get_cat_ID( 'Press Releases' );
+		$section_one_id = get_cat_ID( 'Hot News' );
 		$section_one_link = get_category_link( $section_one_id );
 ?>
 	<section class="section-1 bg-gray-950/5 dark:bg-white/10 p-2 mb-12">
 		<div class="isolate overflow-hidden rounded-lg outline outline-gray-950/5 dark:outline-white/10 bg-white dark:bg-gray-950 p-4">
 			<div class="flex justify-between items-center gap-1.5 title-with-underline mb-8">
 				<h2 class="cfu-section-title">
-					<?php echo esc_html_e( 'Press Releases', 'coinfutura' ); ?>
+					<?php echo esc_html_e( 'Hot News', 'coinfutura' ); ?>
 				</h2>
 				<a href="<?php echo esc_url( $section_one_link ); ?>" class="cfu-btn-more">
 					<?php echo esc_html_e( 'view more', 'coinfutura' ); ?>
@@ -160,7 +160,7 @@ $cfu_post_not_to_repeat = [];
 		'posts_per_page' => 7,
 		'post_type' => 'post',
 		'post_status' => 'publish',
-		'category_name'  => 'market-news',
+		'category_name'  => 'price-analysis',
 		'no_found_rows' => true,
 		'post__not_in'   => $cfu_post_not_to_repeat,
 	]; 
@@ -168,7 +168,7 @@ $cfu_post_not_to_repeat = [];
 	$section_three = new WP_Query( $args );
 
 	if ( $section_three->have_posts() ) :
-		$section_three_id = get_cat_ID( 'Market News' );
+		$section_three_id = get_cat_ID( 'Price Analysis' );
 		$section_three_link = get_category_link( $section_three_id );
 		$section_three_count = 0;
 ?>
@@ -176,7 +176,7 @@ $cfu_post_not_to_repeat = [];
 		<div class="isolate overflow-hidden rounded-lg outline outline-gray-950/5 dark:outline-white/10 bg-white dark:bg-gray-950 p-4">
 			<div class="flex justify-between items-center gap-1.5 title-with-underline mb-8">
 				<h2 class="cfu-section-title">
-					<?php echo esc_html_e( 'Market News', 'coinfutura' ); ?>
+					<?php echo esc_html_e( 'Price Analysis', 'coinfutura' ); ?>
 				</h2>
 				<a href="<?php echo esc_url( $section_three_link ); ?>" class="cfu-btn-more">
 					<?php echo esc_html_e( 'view more', 'coinfutura' ); ?>

@@ -246,6 +246,18 @@ time {
 	@apply before:content-[""] before:inline-block before:absolute before:w-[9px] before:h-[9px] before:left-[-25px] before:top-0 before:rounded-full before:bg-gray-de dark:before:bg-gray-700 before:transition-all before:duration-300 relative after:content-[""] after:inline-block after:absolute after:w-[9px] after:h-[9px] after:left-[-25px] after:top-0 after:rounded-full after:bg-cfu-0 dark:after:bg-cfu after:transition-all after:duration-300;
 }
 
+.cky-consent-container .cky-btn {
+	@apply rounded;
+}
+
+.cky-consent-container.cky-box-bottom-right {
+	@apply max-sm:w-full max-sm:left-1/2  max-sm:-translate-x-1/2;
+}
+
+.cky-consent-container .cky-consent-bar .cky-banner-btn-close{
+	@apply top-3 right-3;
+}
+
 .penci-feed:after {
 	animation: pencisonar 1.5s ease infinite;
 }
@@ -263,3 +275,4 @@ time {
     transform: scale(1);
 	}
 } 
+
