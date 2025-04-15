@@ -269,7 +269,7 @@ class Coinfutura_Walker_Nav_Menu extends Walker_Nav_Menu {
 						</button>
 					</div>
 				</form>
-				<div id="search-results" class="hidden text-sm max-h-96 overflow-y-auto w-full lg:absolute lg:left-0 lg:top-full lg:mt-0.5 lg:bg-white lg:dark:bg-gray-800 lg:border lg:border-gray-950/5 lg:dark:border-white/10 lg:rounded-b-lg lg:shadow lg:z-50"></div>
+				<div id="search-results" class="hidden text-sm max-h-[430px] overflow-y-auto w-full lg:absolute lg:left-0 lg:top-full lg:mt-0.5 lg:bg-white lg:dark:bg-gray-800 lg:border lg:border-gray-950/5 lg:dark:border-white/10 lg:rounded-b-lg lg:shadow lg:z-50"></div>
 			</div>
 
 			<div class="flex items-center gap-x-4 min-lg:hidden">
