@@ -13,6 +13,17 @@ defined( 'ABSPATH' ) || exit;
 	</footer>
 <?php endif; ?>
 
-<div class="flex flex-col items-center gap-6 sm:flex-row justify-center sm:gap-8 py-10 container-center w-full">
-	<p class="text-sm text-gray-600 dark:text-gray-400">&copy; <?php echo date('Y'); ?> <?php echo esc_html(get_bloginfo('name')); ?>. <?php esc_html_e('All rights reserved.', 'coinfutura'); ?></p>
+<div class="flex flex-col items-center justify-center gap-6 lg:flex-row lg:justify-between lg:gap-8 pt-10 pb-24 container-center w-full text-sm text-gray-600 dark:text-gray-400">
+	<?php
+		wp_nav_menu(
+			array(
+				'theme_location' => 'menu-2',
+				'container'      => false,
+				'menu_id'        => 'footer-menu',
+				'menu_class'     => 'flex flex-wrap items-center max-lg:justify-center gap-x-2.5 gap-y-3 cfu-footer-menu',
+				'items_wrap'     => '<ul id="%1$s" class="%2$s" aria-label="submenu">%3$s</ul>',
+			)
+		);
+	?>
+	<p>&copy; <?php echo date('Y'); ?> <?php echo esc_html(get_bloginfo('name')); ?>. <?php esc_html_e('All rights reserved.', 'coinfutura'); ?></p>
 </div>

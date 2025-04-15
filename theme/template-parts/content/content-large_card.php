@@ -27,7 +27,7 @@ $default_img = get_theme_file_uri( 'assets/images/cfu-banner.jpg' );
 	<figure class="block">
 		<a href="<?php echo $cfu_permalink; ?>" aria-hidden="true" tabindex="-1" class="block w-full aspect-video overflow-hidden">
 			<?php if (has_post_thumbnail($cfu_post_id)) : ?>
-				<?php the_post_thumbnail('cfu-blog-featured', array('class' => 'object-cover w-full h-full rounded')); ?>
+				<?php the_post_thumbnail('large', array('class' => 'object-cover w-full h-full rounded')); ?>
 			<?php else : ?>
 				<img width="673" height="378" src="<?php echo $default_img;?>" alt="<?php echo $cfu_title; ?>" class="w-full h-full object-cover rounded">
 			<?php endif; ?>

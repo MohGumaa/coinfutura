@@ -197,7 +197,7 @@ if ( ! function_exists( 'cfu_post_thumbnail' ) ) :
 			?>
 
 			<figure class="rounded overflow-hidden w-full">
-				<?php the_post_thumbnail(); ?>
+				<?php the_post_thumbnail('large'); ?>
 			</figure>
 
 			<?php
@@ -206,7 +206,7 @@ if ( ! function_exists( 'cfu_post_thumbnail' ) ) :
 
 			<figure>
 				<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-					<?php the_post_thumbnail(); ?>
+					<?php the_post_thumbnail('large'); ?>
 				</a>
 			</figure>
 

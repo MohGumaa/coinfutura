@@ -14,7 +14,7 @@ $cfu_post_not_to_repeat = [];
 		'posts_per_page' => 9,
 		'post_type' => 'post',
 		'post_status' => 'publish',
-		'category__in' => array(15, 16, 17, 18, 19, 25, 71, 2175),
+		'category__in' => array(10, 11, 12, 13, 23, 24, 14),
 		'no_found_rows' => true,
 		'post__not_in'   => $cfu_post_not_to_repeat,
 	]; 

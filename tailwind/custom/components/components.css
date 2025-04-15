@@ -18,8 +18,13 @@
 	@apply space-y-5 leading-6;
 }
 
-.cfu-footer .menu a {
+.cfu-footer .menu a,
+.cfu-footer-menu a {
 	@apply hover:underline;
+}
+
+.cfu-footer-menu li {
+	@apply border-e border-gray-950/5 dark:border-white/10 pe-2 last:pe-0;
 }
 
 .cfu-sidebar ul li {

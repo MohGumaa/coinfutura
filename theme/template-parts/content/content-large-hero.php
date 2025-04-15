@@ -24,7 +24,11 @@ $cfu_time_data = cfu_post_time($cfu_post_id);
 $default_icon = get_theme_file_uri( 'assets/images/cfu-icon.webp' );
 ?>
 <article id="post-<?php echo esc_attr($cfu_post_id);?>" class="flex flex-col gap-y-4">
-	<?php cfu_post_thumbnail(); ?>
+	<figure>
+		<a href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+			<?php the_post_thumbnail('large'); ?>
+		</a>
+	</figure>
 	<div>
 		<div class="flex items-center text-xs font-medium mb-2">
 			<time datetime="<?php echo esc_attr($is_updated ? $modified_date_time : $published_date_time); ?>" class="text-gray-500">
