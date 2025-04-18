@@ -8,7 +8,7 @@ defined( 'ABSPATH' ) || exit;
 
 $cfu_post_id = get_the_ID();
 
-function cfu_get_related_articles($post_id, $limit = 4) {
+function cfu_get_related_articles($post_id, $limit = 8) {
 	$categories = get_the_category($post_id);
 	if (empty($categories)) {
 		return [];
