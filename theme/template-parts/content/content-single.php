@@ -111,16 +111,14 @@ $share_urls = cfu_get_share_urls($cfu_post_id);
 			<time datetime="<?php echo esc_attr($published_date_time); ?>">
 				<?php 
 					esc_html_e('Published on', 'coinfutura');
-					echo ' ' . esc_html($published_time) . ' ';
-					esc_html_e('GST', 'coinfutura');
+					echo ' ' . esc_html($published_time);
 				?>
 			</time>
 			<?php if (!$cfu_is_press_release && $is_updated) :?>
 				<time datetime="<?php echo esc_attr($modified_date_time); ?>" class="md:border-s md:ps-1.5">
 					<?php 
 						esc_html_e('Updated on', 'coinfutura');
-						echo ' ' . esc_html($modified_time) . ' ';
-						esc_html_e('GST', 'coinfutura');
+						echo ' ' . esc_html($modified_time);
 					?>
 				</time>
 			<?php endif;?>
