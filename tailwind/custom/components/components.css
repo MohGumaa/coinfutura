@@ -72,6 +72,7 @@ time {
 	@apply placeholder:text-gray-500 text-gray-950/50 dark:text-white/50 dark:bg-white/5 inset-ring inset-ring-gray-950/8 dark:inset-ring-white/15 focus-visible:outline-none rounded-full w-full px-4 py-1.5;
 }
 
+.cfu-btn,
 .search-submit {
 	@apply cursor-pointer inline-block rounded-4xl text-sm font-semibold text-white bg-black dark:bg-gray-700 hover:bg-gray-800 dark:hover:bg-gray-600 px-4 min-sm:px-10 py-2;
 }
@@ -258,6 +259,14 @@ time {
 	@apply top-3 right-3;
 }
 
+.sub-title {
+	background: linear-gradient(135deg, #00ff9d, #00d4ff);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-shadow: 0 0 30px rgba(0, 255, 157, 0.3);
+}
+
 .penci-feed:after {
 	animation: pencisonar 1.5s ease infinite;
 }
@@ -275,4 +284,3 @@ time {
     transform: scale(1);
 	}
 } 
-

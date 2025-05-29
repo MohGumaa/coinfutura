@@ -101,6 +101,17 @@ function cfu_widgets_init() {
 	);
 	register_sidebar(
 		array(
+			'name'          => __( 'Home Sidebar', 'coinfutura' ),
+			'id'            => 'home-sidebar',
+			'description'   => __( 'Add widgets here to appear in your home sidebar.', 'coinfutura' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s cfu_sidebar-widget min-h-[250px] overflow-hidden rounded-lg bg-white dark:bg-white/5 inset-ring inset-ring-gray-950/5 dark:inset-ring-white/5 shadow-xs">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title cfu-widget-title cfu-widget-title-underline text-lg font-semibold capitalize py-2.5 px-3 mb-0">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
 			'name'          => __( 'Footer', 'coinfutura' ),
 			'id'            => 'cfu-footer',
 			'description'   => __( 'Add widgets here to appear in your footer.', 'coinfutura' ),
