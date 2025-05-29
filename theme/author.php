@@ -75,7 +75,7 @@ get_header();
 										class="cfu-social-icon group"
 										target="_blank"
 										rel="noopener noreferrer"
-										aria-label="<?php echo sprintf(__('Follow on %s', 'coinbullet'), ucfirst($platform)); ?>">
+										aria-label="<?php echo sprintf(__('Follow on %s', 'coinfutura'), ucfirst($platform)); ?>">
 											<?php echo $social_icons[$platform]; ?>
 									</a>
 								<?php endif; ?>

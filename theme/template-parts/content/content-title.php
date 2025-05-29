@@ -26,7 +26,7 @@ $cfu_time_data = cfu_post_time($cfu_post_id);
     datetime="<?php echo esc_attr($is_updated ? $modified_date_time : $published_date_time); ?>"  
     class="whitespace-nowrap text-xs font-medium tracking-widest text-gray-500"
   >
-    <span class="sr-only"><?php esc_html_e( 'Date', 'cryptofrontnews' ); ?></span>  
+    <span class="sr-only"><?php esc_html_e( 'Date', 'coinfutura' ); ?></span>  
     <?php echo esc_html($published_time_ago); ?>
   </time>
 	<h4 class="font-semibold article-title line-clamp-2 min-xl:text-sm pt-2">

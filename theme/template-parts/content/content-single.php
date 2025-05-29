@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || exit;
 $cfu_post_id = get_the_ID();
 $cfu_author_id = get_the_author_meta('ID');
 $cfu_author_name = esc_html(get_the_author());
-$cfu_is_press_release = has_category('press-releases');
+$cfu_is_press_release = has_category('press-release');
 $cfu_category = cfu_get_primary_category($cfu_post_id);
 $cfu_author_url = esc_url(get_author_posts_url($cfu_author_id));
 
