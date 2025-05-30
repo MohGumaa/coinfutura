@@ -148,6 +148,14 @@ time {
 	@apply p-3;
 }
 
+.cfu_sidebar-widget > a {
+	@apply inline-flex items-center justify-center min-lg:w-full;
+}
+
+.cfu_sidebar-widget img {
+	@apply rounded-md flex-1;
+}
+
 .facebook-bg, .facebook a {
   background: linear-gradient(227.96deg, #3b5998 11.38%, #2b4170 84.07%);
 }

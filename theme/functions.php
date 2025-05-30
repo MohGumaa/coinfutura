@@ -104,9 +104,9 @@ function cfu_widgets_init() {
 			'name'          => __( 'Home Sidebar', 'coinfutura' ),
 			'id'            => 'home-sidebar',
 			'description'   => __( 'Add widgets here to appear in your home sidebar.', 'coinfutura' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s cfu_sidebar-widget min-h-[250px] overflow-hidden rounded-lg bg-white dark:bg-white/5 inset-ring inset-ring-gray-950/5 dark:inset-ring-white/5 shadow-xs">',
+			'before_widget' => '<div id="%1$s" class="widget %2$s cfu_sidebar-widget cfu_sidebar-home min-h-[250px] lg:min-h-[316px] xl:min-h-[342px] 2xl:min-h-[376px] overflow-hidden rounded-lg bg-white dark:bg-white/5 inset-ring inset-ring-gray-950/5 dark:inset-ring-white/5 shadow-xs">',
 			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widget-title cfu-widget-title cfu-widget-title-underline text-lg font-semibold capitalize py-2.5 px-3 mb-0">',
+			'before_title'  => '<h2 class="widget-title cfu-widget-title cfu-widget-title-underline text-sm font-bold uppercase py-2.5 px-3 mb-0">',
 			'after_title'   => '</h2>',
 		)
 	);

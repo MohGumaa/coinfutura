@@ -116,7 +116,7 @@ $cfu_post_not_to_repeat = [];
 					'posts_per_page' => 3,
 					'post_type' => 'post',
 					'post_status' => 'publish',
-					'category_name'  => 'hot-news',
+					'category_name'  => 'Market',
 					'no_found_rows' => true,
 					'post__not_in'   => $cfu_post_not_to_repeat,
 				]; 
