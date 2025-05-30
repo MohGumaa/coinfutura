@@ -287,6 +287,14 @@ time {
 	text-shadow: 0 0 30px rgba(0, 255, 157, 0.3);
 }
 
+.wp-block-image a {
+	@apply border-2 hover:border-cfu-0 rounded-xl overflow-hidden;
+}
+
+.wp-block-image a img {
+	@apply my-0;
+}
+
 .penci-feed:after {
 	animation: pencisonar 1.5s ease infinite;
 }
