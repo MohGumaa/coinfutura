@@ -295,6 +295,12 @@ time {
 	@apply my-0;
 }
 
+.wp-block-image figcaption,
+.wp-block-image figcaption a,
+.wp-block-media-text__media a{
+	@apply border-none m-0;
+}
+
 .penci-feed:after {
 	animation: pencisonar 1.5s ease infinite;
 }
