@@ -112,6 +112,17 @@ function cfu_widgets_init() {
 	);
 	register_sidebar(
 		array(
+			'name'          => __( 'Banner - 728x90', 'coinfutura' ),
+			'id'            => 'cfu-banner-728',
+			'description'   => __( 'Add widgets banner here.', 'coinfutura' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s cfu_sidebar-widget cfu-banner min-h-12 md:min-h-[100px] overflow-hidden rounded-lg bg-white dark:bg-white/5">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title cfu-widget-title cfu-widget-title-underline text-sm font-bold uppercase py-2.5 px-3 mb-0">',
+			'after_title'   => '</h2>',
+		)
+	);
+	register_sidebar(
+		array(
 			'name'          => __( 'Footer', 'coinfutura' ),
 			'id'            => 'cfu-footer',
 			'description'   => __( 'Add widgets here to appear in your footer.', 'coinfutura' ),

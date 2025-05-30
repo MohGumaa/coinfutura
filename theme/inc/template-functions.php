@@ -339,3 +339,34 @@ if (!function_exists('cfu_get_primary_category')) :
 			return $category_data;
 	}
 endif;
+
+/**
+ * Inject ad widget into the middle of the post content
+ *
+ * @param string $content The original post content.
+ * @return string The modified content with the ad widget injected.
+ */
+function cfu_inject_to_content($content) {
+  if (is_single() && !has_category('press-release') && is_active_sidebar('cfu-banner-728')) {
+		$paragraphs = explode('</p>', $content);
+		$total_paragraphs = count($paragraphs);
+
+		if ($total_paragraphs > 1) {
+			$middle = floor($total_paragraphs / 2);
+
+			// Capture ad widget output
+			ob_start();
+			dynamic_sidebar('cfu-banner-728');
+			$ad_code = trim(ob_get_clean());
+
+			if (!empty($ad_code)) {
+				$paragraphs[$middle] .= $ad_code;
+			}
+		}
+
+		$content = implode('</p>', $paragraphs) . '</p>';
+  }
+
+  return $content;
+}
+add_filter('the_content', 'cfu_inject_to_content');

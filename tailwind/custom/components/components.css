@@ -156,6 +156,18 @@ time {
 	@apply rounded-md flex-1;
 }
 
+.cfu-banner img {
+	@apply m-0;
+}
+
+.cfu-banner a {
+	@apply border-2 rounded-lg overflow-hidden;
+}
+
+.cfu_sidebar-widget.cfu-banner a {
+	@apply p-1.5;
+}
+
 .facebook-bg, .facebook a {
   background: linear-gradient(227.96deg, #3b5998 11.38%, #2b4170 84.07%);
 }
