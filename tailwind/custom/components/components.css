@@ -158,12 +158,25 @@ time {
 	@apply inline-flex items-center justify-center min-lg:w-full;
 }
 
+.cfu_banner-728 > a {
+	@apply block border-0 hover:border-0;
+}
+
 .cfu_sidebar-widget img {
 	@apply rounded-md flex-1;
 }
 
-.cfu-banner img {
+.cfu-banner img, 
+.cfu_banner-728 img {
 	@apply m-0;
+}
+
+.cfu_banner-728 img {
+	@apply w-full rounded;
+}
+
+.home .cfu_banner-728 {
+	@apply rounded-none;
 }
 
 .cfu-banner a {

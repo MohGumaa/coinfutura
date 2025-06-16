@@ -293,3 +293,9 @@ $cfu_post_not_to_repeat = [];
 		<a href="https://t.me/Vijay4dmcrypto" target="_blank" rel="noreferrer noopener" class="max-md:w-full cfu-btn text-black bg-radial-crypto py-3"><?php esc_html_e( 'View All Benefits', 'coinfutura' ); ?></a>
 	</div>
 </section>
+
+<?php if ( is_active_sidebar( 'cfu-banner-728' ) ) :?>
+	<section class="section-5 mt-12">
+		<?php dynamic_sidebar( 'cfu-banner-728' ); ?>
+	</section>
+<?php endif; ?>

@@ -145,36 +145,36 @@ $share_urls = cfu_get_share_urls($cfu_post_id);
 
 		<div class="flex items-center gap-x-1 relative bg-gray-950/[2.5%] after:pointer-events-none after:absolute after:inset-0 after:rounded-lg after:inset-ring after:inset-ring-gray-950/5 dark:after:inset-ring-white/10 bg-[image:radial-gradient(var(--pattern-fg)_1px,_transparent_0)] bg-[size:10px_10px] bg-fixed [--pattern-fg:var(--color-gray-950)]/5 dark:[--pattern-fg:var(--color-white)]/10 rounded-md overflow-hidden px-3 py-3.5 mt-5">
 			<strong class="text-base"><?php esc_html_e( 'Follow us:', 'coinfutura' ); ?></strong>
-			<div class="flex flex-nowrap items-center flex-1 gap-x-4 overflow-x-auto scrollbar-hide py-0.5 px-4">
-				<a href="https://coinmarketcap.com/community/profile/Coinfutura/" class="flexCenter gap-x-1.5 capitalize whitespace-nowrap bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:dark:bg-gray-700 text-gray-800 dark:text-white ring-1 ring-gray-200 dark:ring-gray-700 rounded-sm transition-colors duration-200 shadow-sm py-1.5 px-2 lg:px-3.5 max-sm:text-xs" role="menuitem" target="_blank">
-					<div class="w-5 h-5 md:h-6 md:w-6 shrink-0 rounded flexCenter bg-cmc p-1">
+			<div class="flex flex-nowrap items-center flex-1 gap-x-4 overflow-x-auto scrollbar-hide py-0.5 ps-2.5 min-md:ps-4">
+				<a href="https://coinmarketcap.com/community/profile/Coinfutura/" class="flexCenter gap-x-1.5 capitalize whitespace-nowrap bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:dark:bg-gray-700 text-gray-800 dark:text-white ring-1 ring-gray-200 dark:ring-gray-700 rounded transition-colors duration-200 shadow-sm p-1.5 lg:px-3.5 max-sm:text-xs" role="menuitem" target="_blank">
+					<div class="w-6 h-6 shrink-0 rounded flexCenter bg-cmc p-1">
 						<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="Coinmarketcap--Streamline-Simple-Icons.svg" height="24" width="24"><desc>Coinmarketcap Streamline Icon: https://streamlinehq.com</desc><title>CoinMarketCap</title><path d="M20.738 14.341c-0.419 0.265 -0.912 0.298 -1.286 0.087 -0.476 -0.27 -0.738 -0.898 -0.738 -1.774v-2.618c0 -1.264 -0.5 -2.164 -1.336 -2.407 -1.416 -0.413 -2.482 1.32 -2.882 1.972l-2.498 4.05v-4.95c-0.028 -1.14 -0.398 -1.821 -1.1 -2.027 -0.466 -0.135 -1.161 -0.081 -1.837 0.953l-5.597 8.987A9.875 9.875 0 0 1 2.326 12c0 -5.414 4.339 -9.818 9.672 -9.818 5.332 0 9.67 4.404 9.67 9.818 0.004 0.018 0.002 0.034 0.003 0.053 0.05 1.049 -0.29 1.883 -0.933 2.29zm3.08 -2.34 -0.001 -0.055C23.787 5.353 18.497 0 11.997 0 5.48 0 0.177 5.383 0.177 12c0 6.616 5.303 12 11.82 12 2.991 0 5.846 -1.137 8.037 -3.2 0.435 -0.41 0.46 -1.1 0.057 -1.541a1.064 1.064 0 0 0 -1.519 -0.059 9.56 9.56 0 0 1 -6.574 2.618c-2.856 0 -5.425 -1.263 -7.197 -3.268l5.048 -8.105v3.737c0 1.794 0.696 2.374 1.28 2.544 0.584 0.17 1.476 0.054 2.413 -1.468 0.998 -1.614 2.025 -3.297 3.023 -4.88v2.276c0 1.678 0.672 3.02 1.843 3.68 1.056 0.597 2.384 0.543 3.465 -0.14 1.312 -0.828 2.018 -2.354 1.944 -4.193z" fill="#ffffff" stroke-width="1"></path></svg>
 					</div>
-					<span><?php esc_html_e( 'coinmarketcap', 'coinfutura' ); ?></span>
+					<span class="max-md:hidden"><?php esc_html_e( 'coinmarketcap', 'coinfutura' ); ?></span>
 				</a>
-				<a href="https://www.binance.com/en/square/profile/coinfutura" class="flexCenter gap-x-1.5 capitalize whitespace-nowrap bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:dark:bg-gray-700 text-gray-800 dark:text-white ring-1 ring-gray-200 dark:ring-gray-700 rounded-sm transition-colors duration-200 shadow-sm py-1.5 px-2 lg:px-3.5 max-sm:text-xs" role="menuitem" target="_blank">
-					<div class="w-5 h-5 md:h-6 md:w-6 shrink-0 rounded flexCenter twitter-bg p-1">
+				<a href="https://www.binance.com/en/square/profile/coinfutura" class="flexCenter gap-x-1.5 capitalize whitespace-nowrap bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:dark:bg-gray-700 text-gray-800 dark:text-white ring-1 ring-gray-200 dark:ring-gray-700 rounded transition-colors duration-200 shadow-sm p-1.5 lg:px-3.5 max-sm:text-xs" role="menuitem" target="_blank">
+					<div class="w-6 h-6 shrink-0 rounded flexCenter twitter-bg p-1">
 						<svg viewBox="0 0 126.61 126.61" width="16" height="16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><g fill="#f3ba2f"><path d="m38.73 53.2 24.59-24.58 24.6 24.6 14.3-14.31-38.9-38.91-38.9 38.9z"/><path d="m0 63.31 14.3-14.31 14.31 14.31-14.31 14.3z"/><path d="m38.73 73.41 24.59 24.59 24.6-24.6 14.31 14.29-38.9 38.91-38.91-38.88z"/><path d="m98 63.31 14.3-14.31 14.31 14.3-14.31 14.32z"/><path d="m77.83 63.3-14.51-14.52-10.73 10.73-1.24 1.23-2.54 2.54 14.51 14.5 14.51-14.47z"/></g></svg>
 					</div>
-					<span><?php esc_html_e( 'binance', 'coinfutura' ); ?></span>
+					<span class="max-md:hidden"><?php esc_html_e( 'binance', 'coinfutura' ); ?></span>
 				</a>
-				<a href="#" class="flexCenter gap-x-1.5 capitalize whitespace-nowrap bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:dark:bg-gray-700 text-gray-800 dark:text-white ring-1 ring-gray-200 dark:ring-gray-700 rounded-sm transition-colors duration-200 shadow-sm py-1.5 px-2 lg:px-3.5 max-sm:text-xs" role="menuitem" target="_blank">
-					<div class="w-5 h-5 md:h-6 md:w-6 shrink-0">
+				<a href="#" class="flexCenter gap-x-1.5 capitalize whitespace-nowrap bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:dark:bg-gray-700 text-gray-800 dark:text-white ring-1 ring-gray-200 dark:ring-gray-700 rounded transition-colors duration-200 shadow-sm p-1.5 lg:px-3.5 max-sm:text-xs" role="menuitem" target="_blank">
+					<div class="w-6 h-6 shrink-0">
 						<img src="<?php echo get_template_directory_uri() . '/assets/images/google-news.webp'; ?>" alt="Google News" class="h-full w-full shrink-0" />
 					</div>
-					<span><?php esc_html_e( 'Google News', 'coinfutura' ); ?></span>
+					<span class="max-md:hidden"><?php esc_html_e( 'Google News', 'coinfutura' ); ?></span>
 				</a>
-				<a href="https://t.me/coinfutura" class="flexCenter gap-x-1.5 capitalize whitespace-nowrap bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:dark:bg-gray-700 text-gray-800 dark:text-white ring-1 ring-gray-200 dark:ring-gray-700 rounded-sm transition-colors duration-200 shadow-sm py-1.5 px-2 lg:px-3.5 max-sm:text-xs" role="menuitem" target="_blank">
-					<div class="w-5 h-5 md:h-6 md:w-6 shrink-0 rounded flexCenter telegram-bg p-1">
+				<a href="https://t.me/coinfutura" class="flexCenter gap-x-1.5 capitalize whitespace-nowrap bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:dark:bg-gray-700 text-gray-800 dark:text-white ring-1 ring-gray-200 dark:ring-gray-700 rounded transition-colors duration-200 shadow-sm p-1.5 lg:px-3.5 max-sm:text-xs" role="menuitem" target="_blank">
+					<div class="w-6 h-6 shrink-0 rounded flexCenter telegram-bg p-1">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="currentColor"> <path fill-rule="evenodd" clip-rule="evenodd" d="M23.1117 4.49449C23.4296 2.94472 21.9074 1.65683 20.4317 2.227L2.3425 9.21601C0.694517 9.85273 0.621087 12.1572 2.22518 12.8975L6.1645 14.7157L8.03849 21.2746C8.13583 21.6153 8.40618 21.8791 8.74917 21.968C9.09216 22.0568 9.45658 21.9576 9.70712 21.707L12.5938 18.8203L16.6375 21.8531C17.8113 22.7334 19.5019 22.0922 19.7967 20.6549L23.1117 4.49449ZM3.0633 11.0816L21.1525 4.0926L17.8375 20.2531L13.1 16.6999C12.7019 16.4013 12.1448 16.4409 11.7929 16.7928L10.5565 18.0292L10.928 15.9861L18.2071 8.70703C18.5614 8.35278 18.5988 7.79106 18.2947 7.39293C17.9906 6.99479 17.4389 6.88312 17.0039 7.13168L6.95124 12.876L3.0633 11.0816ZM8.17695 14.4791L8.78333 16.6015L9.01614 15.321C9.05253 15.1209 9.14908 14.9366 9.29291 14.7928L11.5128 12.573L8.17695 14.4791Z" fill="#ffffff"/> </svg>
 					</div>
-					<span><?php esc_html_e( 'telegram', 'coinfutura' ); ?></span>
+					<span class="max-md:hidden"><?php esc_html_e( 'telegram', 'coinfutura' ); ?></span>
 				</a>
-				<a href="https://x.com/coinfutura" class="flexCenter gap-x-1.5 capitalize whitespace-nowrap bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:dark:bg-gray-700 text-gray-800 dark:text-white ring-1 ring-gray-200 dark:ring-gray-700 rounded-sm transition-colors duration-200 shadow-sm py-1.5 px-2 lg:px-3.5 max-sm:text-xs" role="menuitem" target="_blank">
-					<div class="w-5 h-5 md:h-6 md:w-6 shrink-0 rounded flexCenter twitter-bg p-1">
+				<a href="https://x.com/coinfutura" class="flexCenter gap-x-1.5 capitalize whitespace-nowrap bg-white hover:bg-gray-50 dark:bg-gray-800 dark:hover:dark:bg-gray-700 text-gray-800 dark:text-white ring-1 ring-gray-200 dark:ring-gray-700 rounded transition-colors duration-200 shadow-sm p-1.5 lg:px-3.5 max-sm:text-xs" role="menuitem" target="_blank">
+					<div class="w-6 h-6 shrink-0 rounded flexCenter twitter-bg p-1">
 						<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x text-white" viewBox="0 0 16 16"> <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/> </svg>
 					</div>
-					<span><?php esc_html_e( 'twitter', 'coinfutura' ); ?></span>
+					<span class="max-md:hidden"><?php esc_html_e( 'twitter', 'coinfutura' ); ?></span>
 				</a>
 			</div>
 		</div>
