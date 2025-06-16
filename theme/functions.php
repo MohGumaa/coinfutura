@@ -42,7 +42,7 @@ if ( ! function_exists( 'cfu_setup' ) ) :
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus(
 			array(
-				'menu-1' => __( 'Primary', 'coinfutura' ),
+				'menu-1' => __( 'Primary Menu', 'coinfutura' ),
 				'menu-2' => __( 'Footer Menu', 'coinfutura' ),
 			)
 		);
