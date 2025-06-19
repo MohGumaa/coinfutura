@@ -155,36 +155,15 @@ time {
 }
 
 .cfu_sidebar-widget > a {
-	@apply inline-flex items-center justify-center min-lg:w-full;
+	@apply block border-0 hover:border-0 w-full overflow-hidden;
 }
 
-.cfu_banner-728 > a {
-	@apply block border-0 hover:border-0;
-}
-
-.cfu_sidebar-widget img {
-	@apply rounded-md flex-1;
-}
-
-.cfu-banner img, 
-.cfu_banner-728 img {
-	@apply m-0;
-}
-
-.cfu_banner-728 img {
-	@apply w-full rounded;
+.cfu_sidebar-widget img, .cfu-banner img {
+	@apply block rounded-md my-0 mx-auto;
 }
 
 .home .cfu_banner-728 {
 	@apply rounded-none;
-}
-
-.cfu-banner a {
-	@apply border-2 rounded-lg overflow-hidden;
-}
-
-.cfu_sidebar-widget.cfu-banner a {
-	@apply p-1.5;
 }
 
 .facebook-bg, .facebook a {
