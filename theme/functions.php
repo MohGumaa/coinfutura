@@ -115,7 +115,7 @@ function cfu_widgets_init() {
 			'name'          => __( 'Banner - 728x90', 'coinfutura' ),
 			'id'            => 'cfu-banner-728',
 			'description'   => __( 'Add widgets banner here.', 'coinfutura' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s cfu-banner cfu_banner-728 cfu-banner-lg min-h-12 md:min-h-[100px] overflow-hidden rounded-md min-md:rounded-lg bg-gray-950/5 dark:bg-white/10 p-1 min-md:p-2">',
+			'before_widget' => '<div id="%1$s" class="widget %2$s cfu-banner cfu_banner-728 cfu-banner-lg">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widget-title cfu-widget-title cfu-widget-title-underline text-sm font-bold uppercase py-2.5 px-3 mb-0">',
 			'after_title'   => '</h2>',
